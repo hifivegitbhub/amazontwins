@@ -6,7 +6,7 @@ public class ImageFileVO {
 	private String fileName;
 	private String fileType;
 	private String reg_id;
-
+	// thanks Jonas!
 	public ImageFileVO() {
 		super();
 	}
