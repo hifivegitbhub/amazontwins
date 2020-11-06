@@ -1,7 +1,7 @@
 package com.teamproject.amazontwins.member.vo;
 
 import org.springframework.stereotype.Component;
-//test22222
+//test222
 @Component("memberVO")
 public class MemberVO {
 	private String member_id;
