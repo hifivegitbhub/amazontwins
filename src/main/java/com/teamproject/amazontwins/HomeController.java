@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.teamproject.amazontwins.member.service.MemberService;
 import com.teamproject.amazontwins.member.vo.MemberVO;
-
+// Hallo Jonas!!
 @Controller("homeController")
 @EnableAspectJAutoProxy
 public class HomeController {
