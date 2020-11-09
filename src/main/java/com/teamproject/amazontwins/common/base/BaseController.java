@@ -20,7 +20,7 @@ import com.teamproject.amazontwins.goods.vo.ImageFileVO;
 
 public class BaseController {
 private static final String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";
-	
+	//test
 	protected List<ImageFileVO> upload(MultipartHttpServletRequest multipartRequest) throws Exception{
 		List<ImageFileVO> fileList= new ArrayList<ImageFileVO>();
 		Iterator<String> fileNames = multipartRequest.getFileNames();
