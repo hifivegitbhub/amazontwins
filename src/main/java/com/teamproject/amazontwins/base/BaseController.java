@@ -1,4 +1,4 @@
-package com.teamproject.amazontwins.common.base;
+package com.teamproject.amazontwins.base;
 
 import java.io.File;
 import java.text.DecimalFormat;

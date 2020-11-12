@@ -12,11 +12,11 @@ public class GoodsVO {
 	private String goods_sort;
 	private int    goods_sales_price;
 	private int    goods_point;
-	private Date    goods_published_date;
+	private Date   goods_published_date;
 	private int    goods_total_page;
 	private String goods_isbn;
 	private String goods_delivery_price;
-	private Date goods_delivery_date;
+	private Date   goods_delivery_date;
 	private String goods_fileName;
 	private String goods_status;
 	private String goods_writer_intro;
