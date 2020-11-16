@@ -25,6 +25,14 @@
 		<result property="goods_contents_order" column="goods_contents_order" />
 		<result property="goods_intro" column="goods_intro" />
 	</resultMap>
+	
+	<resultMap id="imageResult" type="ImageFileVO">
+	   <result property="goods_id" column="goods_id" />
+	   <result property="fileName" column="fileName" />
+	   <result property="reg_id" column="reg_id" />
+	   <result property="image_id" column="image_id" />
+	   <result property="fileType" column="fileType" />
+	</resultMap>
 
 	<select id="selectGoodsList" parameterType="String" resultMap="goodsResult"   >
         <![CDATA[
@@ -39,5 +47,45 @@
 		         order by g.goods_creDate desc) t
 		 where rowNum < 16
 	    ]]>
+	</select>
+	
+	<select id="selectGoodsBySearchWord" resultMap="goodsResult" parameterType="String">
+		<![CDATA[
+			select g.*, d.fileName
+			  from t_shopping_goods g, t_goods_detail_image d
+			 where g.goods_id = d.goods_id
+			   and d.filetype = 'main_image'
+			   and upper(g.goods_title) like '%' || upper(#{searchWord}) || '%'
+			   and d.goods_id >= 1000
+			 order by g.goods_creDate desc
+		]]>
+	</select>
+	
+	<select id="selectKeywordSearch" resultType="String"   parameterType="String"  >
+	    <![CDATA[
+        select goods_title 
+          from t_shopping_goods 
+         where upper(goods_title) like '%'|| upper(#{keyword}) || '%'
+           and goods_id >= 1000
+         order by goods_creDate desc
+		]]>
+	</select>
+	
+	<select id="selectGoodsDetail" resultMap="goodsResult"   parameterType="String"  >
+	    <![CDATA[
+		     select g.*,d.fileName from t_shopping_goods g, t_goods_detail_image d
+	        where g.goods_id=d.goods_id
+	        and d.filetype='main_image'
+	        and g.goods_id=#{goods_id}
+	        order by g.goods_id
+    	]]>
+	</select>
+	
+	<select id="selectGoodsDetailImage" resultMap="imageResult"   parameterType="String"  >
+	    <![CDATA[
+		    	select * from  t_goods_detail_image 
+		    	where  fileType!='main_image'
+				and goods_id=#{goods_id}
+    	]]>
 	</select>
 </mapper>

@@ -22,8 +22,6 @@ public class FileDownloadController {
 		OutputStream out = response.getOutputStream();
 		String filePath=CURR_IMAGE_REPO_PATH+"\\"+goods_id+"\\"+fileName;
 		
-		System.out.println("filePath::: " + filePath); // Áö¿ì±â
-		
 		File image=new File(filePath);
 		
 		if (image.exists()) { 

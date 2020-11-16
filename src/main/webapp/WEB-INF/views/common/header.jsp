@@ -2,47 +2,50 @@
     pageEncoding="utf-8"
     isELIgnored="false"
     %>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <c:set var="contextPath"  value="${pageContext.request.contextPath}" />
 
 <script type="text/javascript">
 	var loopSearch=true;
-	function keywordSearch(){
-		if(loopSearch==false)
+
+	function keywordSearch() {
+		
+		if(loopSearch == false)
 			return;
-	 var value=document.frmSearch.searchWord.value;
+		
+		var value = document.frmSearch.tags.value;
+		
 		$.ajax({
-			type : "get",
-			async : true, //false인 경우 동기식으로 처리한다.
-			url : "${contextPath}/goods/keywordSearch.do",
-			data : {keyword:value},
+			type	: "get",
+			async	: true,
+			url		: "${contextPath}/goods/keywordSearch.do",
+			data	: {keyword:value},
 			success : function(data, textStatus) {
-			    var jsonInfo = JSON.parse(data);
-				displayResult(jsonInfo);
+							var jsonInfo = JSON.parse(data);
+							displayResult(jsonInfo);
 			},
-			error : function(data, textStatus) {
-				alert("에러가 발생했습니다."+data);
+			error	: function(data, textStatus) {
+							alert("There is an error." + data);
 			},
 			complete : function(data, textStatus) {
-				//alert("작업을완료 했습니다");
-				
+				//alert("completed");
 			}
 		}); //end ajax	
 	}
-	
-	function displayResult(jsonInfo){
+
+	function displayResult(jsonInfo) {
+		
 		var count = jsonInfo.keyword.length;
+		
 		if(count > 0) {
-		    var html = '';
-		    for(var i in jsonInfo.keyword){
-			   html += "<a href=\"javascript:select('"+jsonInfo.keyword[i]+"')\">"+jsonInfo.keyword[i]+"</a><br/>";
-		    }
-		    var listView = document.getElementById("suggestList");
-		    listView.innerHTML = html;
-		    show('suggest');
-		}else{
-		    hide('suggest');
+		    var availableTags = "";		    		    
+		    
+		    $("#tags").autocomplete({ // https://jqueryui.com/autocomplete/
+		        source: jsonInfo.keyword
+			});
 		} 
 	}
 	
@@ -65,7 +68,6 @@
 		  element.style.display = 'none';
 	   }
 	}
-
 </script>
 <body>
 	<div id="header_wrap">
@@ -89,11 +91,15 @@
 		
 		<div id="search" >
 			<form name="frmSearch" action="${contextPath}/goods/searchGoods.do" >
-				<input name="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
+				<input name="searchWord" id="tags" type="text"  onKeyUp="keywordSearch()">
 				<!-- <input type="submit" name="search" class="btn1"  value="search" > -->
 				<button type="submit" name="search" class="btn1"><i class="fa fa-search"></i></button>
 			</form>
 		</div>
+		
+		<div id="suggest">
+	        <div id="suggestList"></div>
+	   	</div>
 		
 		<div id="head_link">
 			<ul>
@@ -110,7 +116,11 @@
 					</c:otherwise>
 				</c:choose>
 				
-				<li><a href="#">Customer Center</a></li>
+				<%-- <fmt:setLocale value="en_US" /> --%>
+				<fmt:setLocale value="de_DE" />
+				
+				<li><a href="#"><fmt:bundle basename="resource.member"><fmt:message key="header.cscenter" /></fmt:bundle></a></li>
+				<!-- <li><a href="#">Customer Center</a></li> -->
 				
 				<c:if test="${isLogOn==true and memberInfo.member_id =='admin' }">  
 					<li class="no_line"><a href="${contextPath}/admin/goods/adminGoodsMain.do">Manager</a></li>
@@ -134,5 +144,6 @@
 			</ul>
 		</nav>
 	</div>
+	
 </body>
 </html>
