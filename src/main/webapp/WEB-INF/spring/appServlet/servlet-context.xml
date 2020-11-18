@@ -38,6 +38,10 @@
 			<mvc:mapping path="/*/*/*.do"/> 
 			<beans:bean class="com.teamproject.amazontwins.common.interceptor.ViewNameInterceptor" />
 		</mvc:interceptor>
+		
+		<beans:bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<beans:property name="paramName" value="lang" />
+		</beans:bean>
 	</mvc:interceptors>
 	
 	<!-- Multipart Resolver -->
@@ -46,5 +50,24 @@
        <beans:property name="maxInMemorySize" value="52428800" />
        <beans:property name="defaultEncoding" value="utf-8" />
     </beans:bean>
+    
+    <beans xmlns="http://www.springframework.org/schema/beans"
+		   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+		<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+			<property name="basenames">
+				<list>
+					<value>/WEB-INF/messages/message</value>
+				</list>
+			</property>
+			<property name="defaultEncoding" value="UTF-8" />
+			<property name="cacheSeconds" value="300" />
+		</bean>
+		
+		<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+			<!-- <property name="defaultLocale" value="ko" /> -->
+		</bean>		
+	</beans>
     
 </beans:beans>

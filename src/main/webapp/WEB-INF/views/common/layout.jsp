@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="${contextPath}/resources/css/comazon_main.css" rel="stylesheet" type="text/css" media="screen">
 <link href="${contextPath}/resources/css/basic-jquery-slider.css" rel="stylesheet" type="text/css" media="screen">
-<link href="${contextPath}/resources/css/mobile.css" rel="stylesheet" type="text/css">
+<%-- <link href="${contextPath}/resources/css/mobile.css" rel="stylesheet" type="text/css"> --%>
 
 <%-- <script src="${contextPath}/resources/jquery/jquery-1.6.2.min.js" type="text/javascript"></script> --%>
 

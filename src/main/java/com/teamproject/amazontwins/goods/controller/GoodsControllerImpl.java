@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.teamproject.amazontwins.goods.vo.GoodsVO;
-import com.teamproject.amazontwins.base.BaseController;
+import com.teamproject.amazontwins.common.base.BaseController;
 import com.teamproject.amazontwins.goods.service.GoodsService;
+import com.teamproject.amazontwins.goods.vo.GoodsVO;
 
 import net.sf.json.JSONObject;
 

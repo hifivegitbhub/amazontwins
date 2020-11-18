@@ -1,6 +1,7 @@
 package com.teamproject.amazontwins.main;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.teamproject.amazontwins.base.BaseController;
+import com.teamproject.amazontwins.common.base.BaseController;
 import com.teamproject.amazontwins.goods.service.GoodsService;
 import com.teamproject.amazontwins.goods.vo.GoodsVO;
 

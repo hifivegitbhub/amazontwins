@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.teamproject.amazontwins.base.BaseController;
+import com.teamproject.amazontwins.common.base.BaseController;
 import com.teamproject.amazontwins.member.controller.MemberController;
 import com.teamproject.amazontwins.member.service.MemberService;
 import com.teamproject.amazontwins.member.vo.MemberVO;

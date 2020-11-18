@@ -4,6 +4,7 @@
     %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 	
 <nav>
@@ -43,61 +44,61 @@
 </c:when>
 <c:otherwise>
 	<li>
-		<h3>Popular in Comazon</h3>
+		<h3><spring:message code="side.popularincomazon" text="*" /></h3>
 		<ul>
-			<li><a href="${contextPath}/goods/goodsList.do">Comazon Book Deals</a></li>
-			<li><a href="#">Best Sellers & More</a></li>
-			<li><a href="#">Editor's Picks</a></li>
-			<li><a href="#">Comazon Unlimited</a></li>
-			<li><a href="#">Summer Reading</a></li>
-			<li><a href="#">eBooks with Audible Narration</a></li>
+			<li><a href="#"><spring:message code="side.comazonbookdeals" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.bestseller" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.editorpick" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.comazonunlimited" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.summerreading" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.ebooksaudible" text="*" /></a></li>
 		</ul>
 	</li>
 	<li>
-		<h3>More in Comazon</h3>
+		<h3><spring:message code="side.moreincomazon" text="*" /></h3>
 		<ul>
-			<li><a href="#">Comazon Charts</a></li>
-			<li><a href="#">Hotly Anticipated</a></li>
-			<li><a href="#">First Reads</a></li>
-			<li><a href="#">Author Follow</a></li>
-			<li><a href="#">Comics and Graphic Novels</a></li>
-			<li><a href="#">Comozon Classics</a></li>
+			<li><a href="#"><spring:message code="side.comazoncharts" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.hotlyanticipared" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.firstreads" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.authorfollow" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.comicsandnovels" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.comazonclassics" text="*" /></a></li>
 		</ul>
 	</li>
 	<li>
-		<h3>Comazon eBooks</h3>
+		<h3><spring:message code="side.comazonbooks" text="*" /></h3>
 		<ul>
-			<li><a href="#">Arts & Photography</a></li>
-			<li><a href="#">Biographies & Memoirs</a></li>
-			<li><a href="#">Business & Money</a></li>
-			<li><a href="#">Children's eBooks</a></li>
-			<li><a href="#">Comics, Manga & Graphic Novels</a></li>
-			<li><a href="#">Computers & Technology</a></li>
-			<li><a href="#">Cookbooks, Food & Wine</a></li>
-			<li><a href="#">Crafts, Hobbies & Home</a></li>
-			<li><a href="#">Education & Teaching</a></li>
-			<li><a href="#">Engineering & Transportation</a></li>
-			<li><a href="#">Foreign Languages</a></li>
-			<li><a href="#">Health, Fitness & Dieting</a></li>
-			<li><a href="#">History</a></li>
-			<li><a href="#">Humor & Entertainment</a></li>
-			<li><a href="#">Law</a></li>
-			<li><a href="#">Lesbian, Gay, Bisexual & Transgender eBooks</a></li>
-			<li><a href="#">Literature & Fiction</a></li>
-			<li><a href="#">Medical eBooks</a></li>
-			<li><a href="#">Mystery, Thriller & Suspense</a></li>
-			<li><a href="#">Nonfiction</a></li>
-			<li><a href="#">Parenting & Relationships</a></li>
-			<li><a href="#">Politics & Social Sciences</a></li>
-			<li><a href="#">Reference</a></li>
-			<li><a href="#">Religion & Spirituality</a></li>
-			<li><a href="#">Romance</a></li>
-			<li><a href="#">Science & Math</a></li>
-			<li><a href="#">Science Fiction & Fantasy</a></li>
-			<li><a href="#">Self-Help</a></li>
-			<li><a href="#">Sports & Outdoors</a></li>
-			<li><a href="#">Teen & Young Adult</a></li>
-			<li><a href="#">Travel</a></li>
+			<li><a href="#"><spring:message code="side.artsphotography" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.biographiesmemoirs" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.businessmoney" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.chilrenebooks" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.comicsmanga" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.computertechnology" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.cookbooksfood" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.craftshobbies" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.educationteaching" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.engineering" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.foreignlanguages" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.healthfitness" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.history" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.humor" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.law" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.lesbiangay" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.literature" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.medicalebooks" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.mystery" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.nonfiction" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.parenting" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.politics" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.reference" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.religion" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.romance" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.sciencemath" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.sciencefiction" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.selfhelp" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.sportsoutdoors" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.teenyoung" text="*" /></a></li>
+			<li><a href="#"><spring:message code="side.travel" text="*" /></a></li>
 		</ul>
 	</li>
  </c:otherwise>
@@ -108,8 +109,8 @@
 <div id="refine">
 	<ul>
 		<li>
-			<h2>Refined by</h2>
-			<h3>Author</h3>
+			<h2><spring:message code="side.refiendby" text="*" /></h2>
+			<h3><spring:message code="side.author" text="*" /></h3>
 			<ul>
 				<li><a href="#">John Grisham</a></li>
 				<li><a href="#">Lee Child</a></li>
@@ -121,7 +122,7 @@
 			</ul>
 		</li>
 		<li>
-			<h3>Series</h3>
+			<h3><spring:message code="side.series" text="*" /></h3>
 			<ul>
 				<li><input class="checkbox" type="checkbox" id="John_Grisham" name="John_Grisham" value="John Grisham">
 				<label class="checkbox" for="John_Grisham">John Grisham</label></li>
@@ -140,44 +141,44 @@
 			</ul>
 		</li>
 		<li>
-			<h3>Language</h3>
+			<h3><spring:message code="side.language" text="*" /></h3>
 			<ul>
 				<li><input class="checkbox" type="checkbox" id="English" name="English" value="English">
-				<label class="checkbox" for="English">English</label></li>
+				<label class="checkbox" for="English"><spring:message code="side.languageenglish" text="*" /></label></li>
 				<li><input class="checkbox" type="checkbox" id="German" name="German" value="German">
-				<label class="checkbox" for="German">German</label></li>
+				<label class="checkbox" for="German"><spring:message code="side.languagegerman" text="*" /></label></li>
 				<li><input class="checkbox" type="checkbox" id="French" name="French" value="French">
-				<label class="checkbox" for="French">French</label></li>
+				<label class="checkbox" for="French"><spring:message code="side.languagefrench" text="*" /></label></li>
 				<li><input class="checkbox" type="checkbox" id="Spanish" name="Spanish" value="Spanish">
-				<label class="checkbox" for="Spanish">Spanish</label></li>
+				<label class="checkbox" for="Spanish"><spring:message code="side.languagespanish" text="*" /></label></li>
 				<li><input class="checkbox" type="checkbox" id="Chinese" name="Chinese" value="Chinese">
-				<label class="checkbox" for="Chinese">Chinese</label></li>
+				<label class="checkbox" for="Chinese"><spring:message code="side.languagechinese" text="*" /></label></li>
 				<li><input class="checkbox" type="checkbox" id="Afrikaans" name="Afrikaans" value="Afrikaans">
-				<label class="checkbox" for="Afrikaans">Afrikaans</label></li>
+				<label class="checkbox" for="Afrikaans"><spring:message code="side.languageafrikaans" text="*" /></label></li>
 				<li><input class="checkbox" type="checkbox" id="Portuguese" name="Portuguese" value="Portuguese">
-				<label class="checkbox" for="Portuguese">Portuguese</label></li>
+				<label class="checkbox" for="Portuguese"><spring:message code="side.languageportuguese" text="*" /></label></li>
 			</ul>
 		</li>
 		<li>
-			<h3>Accessibility Features</h3>
+			<h3><spring:message code="side.accessibility" text="*" /></h3>
 			<ul>
 				<li><input class="checkbox" type="checkbox" id="Supported" name="Supported" value="Supported">
-				<label class="checkbox" for="Supported">Screen Reader Supported</label></li>				
+				<label class="checkbox" for="Supported"><spring:message code="side.screenreader" text="*" /></label></li>				
 			</ul>
 		</li>
 		<li>
-			<h3>Give the Gift of Reading</h3>
+			<h3><spring:message code="side.giftofreading" text="*" /></h3>
 			<ul>
-				<li><a href="#">Give a Comazon Gift Card</a></li>				
-				<li><a href="#">Redeem a Gift Card</a></li>
-				<li><a href="#">View Gift Card Balance and Activity</a></li>
+				<li><a href="#"><spring:message code="side.comazongiftcard" text="*" /></a></li>				
+				<li><a href="#"><spring:message code="side.redeengiftcard" text="*" /></a></li>
+				<li><a href="#"><spring:message code="side.giftcardbalance" text="*" /></a></li>
 			</ul>
 		</li>
 		<li>
-			<h3>Need Help?</h3>
+			<h3><spring:message code="side.needhelp" text="*" /></h3>
 			<ul>
-				<li><a href="#">Manage Content and Devices</a></li>
-				<li><a href="#">Comazon Support</a></li>
+				<li><a href="#"><spring:message code="side.managecontent" text="*" /></a></li>
+				<li><a href="#"><spring:message code="side.comazonsupport" text="*" /></a></li>
 			</ul>
 		</li>
 	</ul>

@@ -3,6 +3,7 @@
 	%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <%
   request.setCharacterEncoding("UTF-8");
@@ -17,8 +18,8 @@
 </div>
 <div class="main_book">
 	<c:set var="goods_count" value="0" />
-	<a href="#" class="more">See more</a>
-	<h3>Best sellers</h3>	
+	<a href="#" class="more"><spring:message code="main.seemore" text="*" /></a>
+	<h3><spring:message code="main.bestsellers" text="*" /></h3>	
 	<c:forEach var="item" items="${goodsMap.bestseller }">
 		<c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
@@ -35,7 +36,7 @@
 			
 			<div class="price">
 		    	<fmt:formatNumber  value="${item.goods_price}" type="number" var="goods_price" />
-				<span class="comazon">Comazon Price: </span> <span class="goods">$${goods_price}</span>
+				<span class="comazon"><spring:message code="main.comazonprice" text="*" /></span> <span class="goods">$${goods_price}</span>
 			</div>
 		</div>
   </c:forEach>
@@ -46,8 +47,8 @@
 </div> --%>
 <div class="main_book" >
 <c:set  var="goods_count" value="0" />
-	<a href="#" class="more">See more</a>
-	<h3>New releases</h3>
+	<a href="#" class="more"><spring:message code="main.seemore" text="*" /></a>
+	<h3><spring:message code="main.newreleases" text="*" /></h3>
 	<c:forEach var="item" items="${goodsMap.newbook }" >
 		<c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
@@ -63,7 +64,7 @@
 			 
 		<div class="price">
 			<fmt:formatNumber  value="${item.goods_price}" type="number" var="goods_price" />
-			<span class="comazon">Comazon Price: </span> <span class="goods">$${goods_price}</span>
+			<span class="comazon"><spring:message code="main.comazonprice" text="*" /></span> <span class="goods">$${goods_price}</span>
 		</div>
 	</div>
 	 <c:if test="${goods_count==15   }">
@@ -82,8 +83,8 @@
 
 <div class="main_book" >
 <c:set  var="goods_count" value="0" />
-	<a href="#" class="more">See more</a>
-	<h3>Steady sellers</h3>
+	<a href="#" class="more"><spring:message code="main.seemore" text="*" /></a>
+	<h3><spring:message code="main.steadysellers" text="*" /></h3>
 	<c:forEach var="item" items="${goodsMap.steadyseller }" >
 	   <c:set  var="goods_count" value="${goods_count+1 }" />
 		<div class="book">
@@ -99,14 +100,14 @@
 		
 		<div class="price">
 	    	<fmt:formatNumber  value="${item.goods_price}" type="number" var="goods_price" />
-			<span class="comazon">Comazon Price: </span> <span class="goods">$${goods_price}</span>
+			<span class="comazon"><spring:message code="main.comazonprice" text="*" /></span> <span class="goods">$${goods_price}</span>
 		</div>
 	</div>
-	 <c:if test="${goods_count==15   }">
+	 <%-- <c:if test="${goods_count==15   }">
      <div class="book">
        <font size=20> <a href="#">See more</a></font>
      </div>
-   </c:if>
+   </c:if> --%>
 	</c:forEach>
 </div>
 

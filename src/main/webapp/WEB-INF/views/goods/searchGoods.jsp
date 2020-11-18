@@ -6,6 +6,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <%
      //치환 변수 선언합니다.
@@ -19,9 +20,9 @@
 	<div class="clear"></div>
 	<div id="sorting">
 		<ul>
-			<li><a class="active" href="#">Price: Low to High</a></li>
-			<li><a href="#">Price: High to Low</a></li>
-			<li><a style="border: currentColor; border-image: none;" href="#">Publication Date</a></li>
+			<li><a class="active" href="#"><spring:message code="searchpage.pricelowtohigh" text="*" /></a></li>
+			<li><a href="#"><spring:message code="searchpage.pricehightolow" text="*" /></a></li>
+			<li><a style="border: currentColor; border-image: none;" href="#"><spring:message code="searchpage.publicationdate" text="*" /></a></li>
 		</ul>
 	</div>
 	<table id="list_view">
@@ -39,7 +40,7 @@
 					</h2>
 					<c:set var="goods_pub_date" value="${item.goods_published_date }" />
 				   <c:set var="arr" value="${fn:split(goods_pub_date,' ')}" />
-					<div class="writer_press"  >by ${item.goods_writer}
+					<div class="writer_press"  ><spring:message code="searchpage.by" text="*" /> ${item.goods_writer}
 						| ${item.goods_publisher} | <c:out value="${arr[0]}" />
 					</div>
 				</td>
@@ -47,14 +48,14 @@
 					<strong>
 					 <fmt:formatNumber value="${item.goods_price*0.9}" type="number" var="discounted_price" />
 			               $${discounted_price}
-					</strong><br>(10% off)
+					</strong><br>(10% <spring:message code="searchpage.off" text="*" />)
 				</td>
 				<td><input type="checkbox" value=""></td>
 				<td class="buy_btns">
 					<UL>
-						<li><a href="#">Add to Cart</a></li>
-						<li><a href="#">Buy now</a></li>
-						<li><a href="#">Compare</a></li>
+						<li><a href="#"><spring:message code="searchpage.addtocart" text="*" /></a></li>
+						<li><a href="#"><spring:message code="searchpage.buynow" text="*" /></a></li>
+						<li><a href="#"><spring:message code="searchpage.compare" text="*" /></a></li>
 					</UL>
 				</td>
 			</tr>
@@ -64,7 +65,7 @@
 	<div class="clear"></div>
 	<div id="page_wrap">
 		<ul id="page_control">
-			<li><a class="no_border" href="#">Prev</a></li>
+			<li><a class="no_border" href="#"><spring:message code="searchpage.prev" text="*" /></a></li>
 			<c:set var="page_num" value="0" />
 			<c:forEach var="count" begin="1" end="10" step="1">
 				<c:choose>
@@ -76,6 +77,6 @@
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
-			<li><a class="no_border" href="#">Next</a></li>
+			<li><a class="no_border" href="#"><spring:message code="searchpage.next" text="*" /></a></li>
 		</ul>
 	</div>

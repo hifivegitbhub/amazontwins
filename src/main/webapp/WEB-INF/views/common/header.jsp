@@ -2,13 +2,23 @@
     pageEncoding="utf-8"
     isELIgnored="false"
     %>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <c:set var="contextPath"  value="${pageContext.request.contextPath}" />
 
 <script type="text/javascript">
+
+	$(document).ready(function(){
+		$('#localechoice').on('change', function(){
+			var lang = $('#localechoice').val();
+			var params = location.search.substr(location.search.indexOf("?") + 1);
+			
+			location.href = "${contextPath}" + "${viewName}" + ".do?lang=" + lang + "&" + params;
+		})
+	});
+	
 	var loopSearch=true;
 
 	function keywordSearch() {
@@ -85,8 +95,8 @@
 		</div>
 		
 		<div id="deliver_to">
-			<font size=1><a href="#">Deliver to</a></font><br>
-			<font size=2><b><a href="#">Korea, Republic of</a></b></font>
+			<font size=1><a href="#"><spring:message code="header.deliverto" text="*" /></a></font><br>
+			<font size=2><b><a href="#"><spring:message code="header.country" text="*" /></a></b></font>
         </div>
 		
 		<div id="search" >
@@ -101,6 +111,23 @@
 	        <div id="suggestList"></div>
 	   	</div>
 		
+		<div>
+			<select id="localechoice" class="form-control">
+				<option>
+					<spring:message code="header.changelanguage" text="*" />
+				</option>
+				<option value="ko">
+					<spring:message code="header.languagekorea" text="*" />
+				</option>
+				<option value="en">
+					<spring:message code="header.languageenglish" text="*" />
+				</option>
+				<option value="de">
+					<spring:message code="header.languagegermany" text="*" />
+				</option>
+			</select>
+		</div>
+		
 		<div id="head_link">
 			<ul>
 				<c:choose>
@@ -111,16 +138,12 @@
 						<li><a href="#">Delivery</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="${contextPath}/member/loginForm.do">Login</a></li>
-						<li><a href="${contextPath}/member/memberForm.do">Sign Up</a></li> 
+						<li><a href="${contextPath}/member/loginForm.do"><spring:message code="header.login" text="*" /></a></li>
+						<li><a href="${contextPath}/member/memberForm.do"><spring:message code="header.signup" text="*" /></a></li> 
 					</c:otherwise>
 				</c:choose>
 				
-				<%-- <fmt:setLocale value="en_US" /> --%>
-				<fmt:setLocale value="de_DE" />
-				
-				<li><a href="#"><fmt:bundle basename="resource.member"><fmt:message key="header.cscenter" /></fmt:bundle></a></li>
-				<!-- <li><a href="#">Customer Center</a></li> -->
+				<li><a href="#"><spring:message code="header.cscenter" text="*" /></a></li>
 				
 				<c:if test="${isLogOn==true and memberInfo.member_id =='admin' }">  
 					<li class="no_line"><a href="${contextPath}/admin/goods/adminGoodsMain.do">Manager</a></li>
@@ -136,14 +159,13 @@
 	<div id="header_menu_wrap">
 		<nav id="header_menu">
 			<ul>
-				<li><a href="${contextPath}/member/logout.do">Today's Deals</a></li>
-				<li><a href="${contextPath}/member/logout.do">Customer Service</a></li>
-				<li><a href="${contextPath}/member/logout.do">Gift Cards</a></li>
-				<li><a href="${contextPath}/member/logout.do">Sell</a></li>
-				<li><a href="${contextPath}/member/logout.do">Registry</a></li>
+				<li><a href="${contextPath}/member/logout.do"><spring:message code="header.deal" text="*" /></a></li>
+				<li><a href="${contextPath}/member/logout.do"><spring:message code="header.csservice" text="*" /></a></li>
+				<li><a href="${contextPath}/member/logout.do"><spring:message code="header.giftcard" text="*" /></a></li>
+				<li><a href="${contextPath}/member/logout.do"><spring:message code="header.sell" text="*" /></a></li>
+				<li><a href="${contextPath}/member/logout.do"><spring:message code="header.registry" text="*" /></a></li>
 			</ul>
 		</nav>
 	</div>
-	
 </body>
 </html>

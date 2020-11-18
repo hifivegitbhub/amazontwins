@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.teamproject.amazontwins.goods.service.GoodsService;
 import com.teamproject.amazontwins.goods.dao.GoodsDAO;
 import com.teamproject.amazontwins.goods.vo.GoodsVO;
 import com.teamproject.amazontwins.goods.vo.ImageFileVO;
