@@ -11,7 +11,7 @@
 		]]>
 	</select>
 	
-	<!-- <resultMap id="memberResult" type="MemberVO">
+	<resultMap id="memberResult" type="MemberVO">
 		<result property="member_id" column="member_id" />
 		<result property="member_pw" column="member_pw" />
 		<result property="member_name" column="member_name" />
@@ -105,5 +105,5 @@
                                   
                                       
    ]]>      
-  </insert> -->
+  </insert>
 </mapper>

@@ -41,7 +41,7 @@ header a:hover {
 	margin: 0px auto; padding: 0px; min-width: 1200px;	
 }
 #wrap {
-	margin: 0px auto; padding: 0px; width: 1200px; float: center;
+	margin: 0px auto; padding: 0px; width: 1450px; float: center;
 }
 header #header_wrap {
 	height: 60px; background-color: rgb(27, 34, 43);
@@ -82,7 +82,7 @@ header #search #tags {
 	float: left;
 }
 header #search .btn1 {
-	border: 1px solid rgb(255, 216, 137); border-image: none; width: 55px; height: 30px; color: rgb(77, 77, 77);background-color: rgb(255, 216, 137); cursor: pointer;
+	border: 1px solid rgb(255, 216, 137); border-image: none; width: 55px; height: 30px; color: rgb(77, 77, 77); background-color: rgb(255, 216, 137); cursor: pointer;
 	float: left;
 }
 header #localechoice {
@@ -217,7 +217,7 @@ aside #banner {
 	cursor: pointer;
 }
 article {
-	margin: 0px auto; width: 994px; float: left; 
+	margin: 0px auto; width: 1244px; float: left; 
 }
 .link {
 	width: 188px; height: 230px; display: block; position: absolute; z-index: 2;
@@ -373,7 +373,7 @@ article h4 {
 	margin: 5px 0px;
 }
 article h3 {
-	color: rgb(0, 153, 255); font-size: 1em; text-align: left;
+	font-size: 1em; text-align: left;
 }
 article h4 {
 	font-size: 0.8em; font-weight: normal;
@@ -456,25 +456,44 @@ article h4 {
 	color: rgb(0, 0, 0); background-color: rgb(255, 204, 0);
 }
 #container {
-	margin: 40px auto; width: 100%;
+	margin: 0px auto; width: 100%;
 }
 ul.tabs {
-	list-style: none; margin: 0px; padding: 0px; width: 100%; height: 32px; border-bottom-color: rgb(255, 0, 0); border-bottom-width: 1px; border-bottom-style: solid; float: left;
+	list-style: none; margin: 0px; padding: 0px; width: 100%; height: 32px; border-bottom-color: rgb(220, 220, 220); border-bottom-width: 1px; border-bottom-style: solid; float: left;
 }
 ul.tabs li {
-	border-width: 1px; border-style: solid; border-color: rgb(153, 153, 153) rgb(153, 153, 153) rgb(255, 0, 0); margin: 0px 1px; padding: 0px; border-image: none; height: 31px; line-height: 31px; overflow: hidden; float: left; border-top-left-radius: 7px; border-top-right-radius: 7px; background-color: rgb(245, 245, 245);
+	border-width: 1px; padding: 0px; border-image: none; height: 31px; line-height: 31px; overflow: hidden; float: left; background-color: rgb(235, 235, 235);
 }
 ul.tabs li a {
 	padding: 0px 20px; color: rgb(0, 0, 0); font-size: 12px; font-weight: bold; text-decoration: none; display: block;
 }
 ul.tabs li a:hover {
-	background-color: rgb(202, 228, 255);
+	background-color: white;
 }
 ul.tabs li.active {
 	background: rgb(255, 255, 255); border-color: rgb(255, 0, 0) rgb(255, 0, 0) rgb(255, 255, 255); border-bottom-width: 2px; border-bottom-style: solid;
 }
 ul.tabs li.active a:hover {
 	background: rgb(255, 255, 255); border-color: rgb(255, 0, 0) rgb(255, 0, 0) rgb(255, 255, 255); border-bottom-width: 2px; border-bottom-style: solid;
+}
+
+
+
+
+
+
+/* admin new product add */
+#admin_new_product_add_wrap {
+	padding: 10px 0px;
+}
+#head_wrapper {
+	width: 100%; height: 36px; border-bottom: 2px solid rgb(51, 51, 51);
+}
+#head_wrapper_title {
+	float: left;
+}
+#newproduct_add_btn_wrapper {
+	padding: 20px;
 }
 .tab_container {
 	background: rgb(255, 255, 255); width: 100%; clear: both; border-top-color: currentColor; border-top-width: medium; border-top-style: none; float: left;
@@ -483,7 +502,7 @@ ul.tabs li.active a:hover {
 	padding: 10px 10px 20px; line-height: 1.8em; font-size: 0.75em; min-height: 400px;
 }
 .tab_content h4 {
-	background-position: left top; margin: 10px 0px; padding: 20px 0px 5px 35px; height: 30px; color: rgb(255, 255, 255); letter-spacing: 4px; font-family: Serif; font-size: 16px; font-weight: bold; background-image: url("../imgs/h4_back.png"); background-repeat: no-repeat;
+	background-position: left top; margin: 10px 0px; padding: 20px 0px 5px 35px; height: 30px; font-size: 16px; font-weight: bold;
 }
 .tab_content p {
 	margin: 10px 0px 0px;
@@ -519,52 +538,140 @@ ul.tabs li.active a:hover {
 #sticky .recent ul li {
 	padding: 5px 0px; background-image: none;
 }
+#productinfo_form td:first-child {
+	text-align: right;
+    padding: 10px 10px 10px 0px;
+    font-weight: bold;
+
+}
+#productinfo_form input {
+    height: 25px;
+    border: 1px solid gray;
+}
+
+
+
+
+
+
+
+
+
+
+/* admin */
+/* table, th, td {
+	border: 1px solid red;
+}
+ */
+#admin_main_product_search_wrap {
+	padding: 10px 0px;
+}
+#admin_main_product_search_wrap .outer_table {
+	width: 100%;
+    color: rgb(51, 51, 51);
+    font-size: 0.75em;
+    margin-top: 10px;
+    border-top-color: rgb(51, 51, 51);
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-collapse: collapse;
+}
+#admin_main_product_search_wrap .first_td {
+	font-weight: bold; background-color: rgb(235, 235, 235);
+}
+#admin_main_product_search_wrap .outer_table td {
+	margin: 0px;
+    padding: 10px 10px;
+    border-bottom-color: rgb(153, 153, 153);
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+}
+#admin_main_product_search_wrap .outer_table .inner_table tr td {
+	border-bottom-style: none;
+}
+#admin_main_product_search_wrap .search_period {
+	cursor: pointer;
+    padding: 2px 8px;
+    background-color: white;
+    border-radius: 3px;
+    border-color: black;
+    border: 1px solid rgb(235, 235, 235);
+    outline: 0px;
+}
+#admin_main_product_search_wrap .search_period:hover {
+	background-color: rgb(235, 235, 235);	
+}
+#admin_main_product_search_wrap #to {
+	width: 100px;
+}
+#admin_main_product_add {
+	text-align: right;
+}
+article .btn {
+	padding: 2px 4px;
+    cursor: pointer;
+}
+article .btn_medium {
+	padding: 8px 15px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+article .btn_medium:hover {
+	background: rgb(255, 216, 137);
+	border: 1px solid gray;
+}
+#admin_main_product_add .search_period {
+	padding: 5px 10px; border: 1px solid rgb(27, 34, 43); border-radius: 3px;
+}
 .list_view {
-	width: 100%; color: rgb(51, 51, 51); font-size: 0.75em; margin-top: 20px; border-top-color: rgb(51, 51, 51); border-top-width: 2px; border-top-style: solid; border-collapse: collapse;
+	width: 100%; color: rgb(51, 51, 51); font-size: 0.75em; margin-top: 10px; border-top-color: rgb(51, 51, 51); border-top-width: 2px; border-top-style: solid; border-collapse: collapse;
+}
+.list_view thead tr {
+	background-color: rgb(235, 235, 235); text-align: center; font-weight: bold;
 }
 .list_view tr {
 	margin: 0px; padding: 10px 0px; border-bottom-color: rgb(153, 153, 153); border-bottom-width: 1px; border-bottom-style: dotted; 
 }
-  .list_view td {
+.list_view td {
 	margin: 0px; padding: 10px 0px; border-bottom-color: rgb(153, 153, 153); border-bottom-width: 1px; border-bottom-style: dotted;
 }
-  .list_view h2 {
+.list_view h2 {
 	padding: 0px 0px 2px; font-size: 1.2em; font-weight: bold;
 }
-  .list_view td.goods_image {
+.list_view td.goods_image {
 	width: 80px;
 }
-  .list_view td.goods_description {
+.list_view td.goods_description {
 	width: 500px; padding-left: 5px;
 }
- .list_view td.goods_description .writer_press {
+.list_view td.goods_description .writer_press {
 	padding: 2px 5px; color: rgb(51, 102, 255);
 }
-  .list_view td.goods_description p {
+.list_view td.goods_description p {
 	line-height: 1.2em;
 }
-  .list_view td.price {
+.list_view td.price {
 	padding: 0px 0px 0px 10px; width: 70px;
 }
- .list_view td.price span {
+.list_view td.price span {
 	text-decoration: line-through;
 }
-   .list_view td.price strong {
+.list_view td.price strong {
 	color: rgb(255, 0, 0); font-weight: bold;
 }
- .list_view td.buy_btns {
+.list_view td.buy_btns {
 	width: 80px; padding-left: 5px;
 }
-  .list_view td.buy_btns ul {
+.list_view td.buy_btns ul {
 	list-style: none;
 }
-  .list_view td.buy_btns ul li {
+.list_view td.buy_btns ul li {
 	margin: 5px 0px;
 }
- .list_view td.buy_btns ul li a {
+.list_view td.buy_btns ul li a {
 	padding: 5px 12px; border-radius: 3px; border: 1px solid rgb(153, 153, 153); border-image: none; text-align: center; display: block;
 }
-  .list_view td.buy_btns ul li a:hover {
+.list_view td.buy_btns ul li a:hover {
 	color: rgb(255, 255, 255); background-color: rgb(0, 51, 102);
 }
 .detail_table {
@@ -634,7 +741,7 @@ article h1_TITLE {
 	padding: 0px 0px 5px; letter-spacing: 2px; font-size: 1.1em; border-bottom-color: rgb(102, 102, 102); border-bottom-width: 2px;
 }
 .main_book {
-	width: 984px; padding: 30px 0px 0px 10px; font-size: 1em; float: left;
+	width: 1234px; padding: 30px 0px 0px 10px; font-size: 1em; float: left;
 }
 .main_book h3 {
 	margin: 0px 0px 5px; padding: 0px 0px 5px; color: rgb(27, 34, 43); font-size: 1.4em; border-bottom-color: lightgray; border-bottom-width: 1px; border-bottom-style: solid;

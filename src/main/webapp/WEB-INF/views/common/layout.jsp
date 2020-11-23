@@ -16,7 +16,6 @@
 <link href="${contextPath}/resources/css/comazon_main.css" rel="stylesheet" type="text/css" media="screen">
 <link href="${contextPath}/resources/css/basic-jquery-slider.css" rel="stylesheet" type="text/css" media="screen">
 <%-- <link href="${contextPath}/resources/css/mobile.css" rel="stylesheet" type="text/css"> --%>
-
 <%-- <script src="${contextPath}/resources/jquery/jquery-1.6.2.min.js" type="text/javascript"></script> --%>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -29,17 +28,17 @@
 <script src="${contextPath}/resources/jquery/tabs.js" type="text/javascript"></script>
 <script src="${contextPath}/resources/jquery/carousel.js" type="text/javascript"></script>
 <script>
-	// 슬라이드 
+	// slide 
 	$(document).ready(function() {
 		$('#ad_main_banner').bjqs({
-			'width' : 994,
-			'height' : 180,
+			'width' : 1244,
+			'height' : 230,
 			'showMarkers' : true,
 			'showControls' : false,
 			'centerMarkers' : false
 		});
 	});
-	// 스티키 		
+	// sticky	
 	$(function() {
 		$("#sticky").stickySidebar({
 			timer : 100,

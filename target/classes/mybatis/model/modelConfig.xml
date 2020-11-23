@@ -6,6 +6,7 @@
 	<typeAliases>
 		<typeAlias type="com.teamproject.amazontwins.goods.vo.GoodsVO" alias="goodsVO" />
 		<typeAlias type="com.teamproject.amazontwins.goods.vo.ImageFileVO" alias="imageFileVO" />
-		<typeAlias type="com.teamproject.amazontwins.member.vo.MemberVO" alias="memberVO" />		
+		<typeAlias type="com.teamproject.amazontwins.member.vo.MemberVO" alias="memberVO" />
+		<typeAlias type="com.teamproject.amazontwins.order.vo.OrderVO" alias="orderVO" />
 	</typeAliases>
 </configuration>

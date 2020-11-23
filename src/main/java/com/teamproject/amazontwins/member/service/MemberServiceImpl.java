@@ -1,5 +1,7 @@
 package com.teamproject.amazontwins.member.service;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -15,8 +17,12 @@ public class MemberServiceImpl implements MemberService {
 	MemberDAO memberDAO;
 
 	@Override
-	public MemberVO selectTestMember() throws Exception {
-		return memberDAO.selectTestMember();
+	public MemberVO login(Map  loginMap) throws Exception{
+		return memberDAO.login(loginMap);
 	}
-
+	
+	@Override
+	public String overlapped(String id) throws Exception{
+		return memberDAO.selectOverlappedID(id);
+	}
 }

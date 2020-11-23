@@ -35,27 +35,27 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 	public ModelAndView login(@RequestParam Map<String, String> loginMap,
 			                  HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
-//		 memberVO=memberService.login(loginMap);
-//		if(memberVO!= null && memberVO.getMember_id()!=null){
-//			HttpSession session=request.getSession();
-//			session=request.getSession();
-//			session.setAttribute("isLogOn", true);
-//			session.setAttribute("memberInfo",memberVO);
-//			
-//			String action=(String)session.getAttribute("action");
-//			if(action!=null && action.equals("/order/orderEachGoods.do")){
-//				mav.setViewName("forward:"+action);
-//			}else{
-//				mav.setViewName("redirect:/main/main.do");	
-//			}
-//			
-//			
-//			
-//		}else{
-//			String message="¾ÆÀÌµğ³ª  ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù. ´Ù½Ã ·Î±×ÀÎÇØÁÖ¼¼¿ä";
-//			mav.addObject("message", message);
-//			mav.setViewName("/member/loginForm");
-//		}
+		 memberVO=memberService.login(loginMap);
+		if(memberVO!= null && memberVO.getMember_id()!=null){
+			HttpSession session=request.getSession();
+			session=request.getSession();
+			session.setAttribute("isLogOn", true);
+			session.setAttribute("memberInfo",memberVO);
+			
+			String action=(String)session.getAttribute("action");
+			if(action!=null && action.equals("/order/orderEachGoods.do")){
+				mav.setViewName("forward:"+action);
+			}else{
+				mav.setViewName("redirect:/main/main.do");	
+			}
+			
+			
+			
+		}else{
+			String message="ì•„ì´ë””ë‚˜ ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤.";
+			mav.addObject("message", message);
+			mav.setViewName("/member/signIn");
+		}
 		return mav;
 	}
 	
@@ -63,10 +63,10 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 	@RequestMapping(value="/logout.do" ,method = RequestMethod.GET)
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
-//		HttpSession session=request.getSession();
-//		session.setAttribute("isLogOn", false);
-//		session.removeAttribute("memberInfo");
-//		mav.setViewName("redirect:/main/main.do");
+		HttpSession session=request.getSession();
+		session.setAttribute("isLogOn", false);
+		session.removeAttribute("memberInfo");
+		mav.setViewName("redirect:/main/main.do");
 		return mav;
 	}
 	
@@ -83,13 +83,13 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 //		try {
 //		    memberService.addMember(_memberVO);
 //		    message  = "<script>";
-//		    message +=" alert('È¸¿ø °¡ÀÔÀ» ¸¶ÃÆ½À´Ï´Ù.·Î±×ÀÎÃ¢À¸·Î ÀÌµ¿ÇÕ´Ï´Ù.');";
+//		    message +=" alert('È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ½ï¿½ï¿½Ï´ï¿½.ï¿½Î±ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Õ´Ï´ï¿½.');";
 //		    message += " location.href='"+request.getContextPath()+"/member/loginForm.do';";
 //		    message += " </script>";
 //		    
 //		}catch(Exception e) {
 //			message  = "<script>";
-//		    message +=" alert('ÀÛ¾÷ Áß ¿À·ù°¡ ¹ß»ıÇß½À´Ï´Ù. ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä');";
+//		    message +=" alert('ï¿½Û¾ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½. ï¿½Ù½ï¿½ ï¿½Ãµï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½');";
 //		    message += " location.href='"+request.getContextPath()+"/member/memberForm.do';";
 //		    message += " </script>";
 //			e.printStackTrace();
@@ -102,8 +102,8 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 	@RequestMapping(value="/overlapped.do" ,method = RequestMethod.POST)
 	public ResponseEntity overlapped(@RequestParam("id") String id,HttpServletRequest request, HttpServletResponse response) throws Exception{
 		ResponseEntity resEntity = null;
-//		String result = memberService.overlapped(id);
-//		resEntity =new ResponseEntity(result, HttpStatus.OK);
+		String result = memberService.overlapped(id);
+		resEntity =new ResponseEntity(result, HttpStatus.OK);
 		return resEntity;
 	}
 }

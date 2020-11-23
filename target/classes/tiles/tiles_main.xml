@@ -12,6 +12,14 @@
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
 		<!-- <put-attribute name="quickMenu" value="/WEB-INF/views/common/quickMenu.jsp" /> -->
 	</definition>
+	
+	<definition name="signInLayout"
+		template="/WEB-INF/views/common/signInLayout.jsp">
+		<put-attribute name="title" value="Sign-In layout page" />
+		<put-attribute name="header" value="/WEB-INF/views/common/headerSignIn.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/common/footerSignIn.jsp" />
+	</definition>
 
 	<definition name="/main/main" extends="baseLayout">
 		<put-attribute name="title" value="Comazon.com: Online Shopping for Everything!" />

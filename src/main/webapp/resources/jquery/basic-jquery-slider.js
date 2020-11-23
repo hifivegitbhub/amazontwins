@@ -20,8 +20,8 @@
 	var settings = {};	
 		
 	var defaults = {
-		width: 994,					// Width + Height used to ensure consistency
-		height: 180,				// Width + Height used to ensure consistency
+		width: 1244,					// Width + Height used to ensure consistency
+		height: 230,				// Width + Height used to ensure consistency
 		animation: 'slide',			// The type of animation (slide or fade)
 		animationDuration: 450, 	// The duration in ms of the transition between slides
 		automatic: true,			// Automatically rotate through the slides

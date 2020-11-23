@@ -1,0 +1,107 @@
+@font-face {
+	font-family: sans-serif;
+}
+* {
+	margin: 0px; padding: 0px; vertical-align: middle;
+}
+body {
+	font-family: sans-serif; background-position: top; background-color: rgb(255, 255, 255); margin: 0px; padding: 0px; text-align: center; font-size: 0.8em;
+}
+img {
+	border: currentColor; border-image: none;
+}
+a {
+	color: rgb(56, 134, 204); text-decoration: none;
+}
+a:hover {
+	color: rgb(218, 113, 8); text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* header */
+header #headerSignIn_wrap {
+}
+
+
+
+
+
+
+
+
+/* body */
+article #wrap {
+	width: 300px;
+	margin: 0px auto;
+    border: 1px solid lightgray;
+    padding: 20px 20px;
+    border-radius: 5px;
+    text-align: left;
+}
+article h1 {
+	font-size: 2em;
+}
+article .signIn_btn {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(255, 216, 137);
+    border: 1px solid burlywood;
+    border-radius: 3px;
+    cursor: pointer;
+}
+article .signIn_btn:hover {
+	background-color: rgb(225, 186, 107);
+}
+article .input {
+	width: 100%;
+    height: 30px;
+    margin: 5px 0px 10px 0px;
+}
+article #detail_table {
+	margin-top: 20px;
+}
+article #sub_wrap {
+    width: 340px;
+    margin: 20px auto;
+}
+article .signUp_btn {
+	width: 100%;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* footer */
+footer ul li {
+	background-position: right; float: left;
+}
+footer ul li.no_line {
+	background-image: none;
+}
+footer ul li a {
+	padding: 13px 15px; font-size: 1.1em; display: block;
+}
+footer #company {
+}
+footer #company ul {
+	list-style: none; height: 20px; display: table; margin: 5px auto;
+}
+footer #company li {
+	color: gray; margin: 0px 7px;	
+}

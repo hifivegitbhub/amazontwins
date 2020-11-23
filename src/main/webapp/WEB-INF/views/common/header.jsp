@@ -132,13 +132,13 @@
 			<ul>
 				<c:choose>
 					<c:when test="${isLogOn==true and not empty memberInfo}">
-						<li><a href="${contextPath}/member/logout.do">Logout</a></li>
-						<li><a href="${contextPath}/mypage/myPageMain.do">Mypage</a></li>
-						<li><a href="${contextPath}/cart/myCartList.do">Cart</a></li>
+						<li><a href="${contextPath}/member/logout.do"><spring:message code="header.logout" text="*" /></a></li>
+						<li><a href="${contextPath}/mypage/myPageMain.do"><spring:message code="header.mypage" text="*" /></a></li>
+						<li><a href="${contextPath}/cart/myCartList.do"><spring:message code="header.cart" text="*" /></a></li>
 						<li><a href="#">Delivery</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="${contextPath}/member/loginForm.do"><spring:message code="header.login" text="*" /></a></li>
+						<li><a href="${contextPath}/member/signIn.do"><spring:message code="header.login" text="*" /></a></li>
 						<li><a href="${contextPath}/member/memberForm.do"><spring:message code="header.signup" text="*" /></a></li> 
 					</c:otherwise>
 				</c:choose>
@@ -146,7 +146,7 @@
 				<li><a href="#"><spring:message code="header.cscenter" text="*" /></a></li>
 				
 				<c:if test="${isLogOn==true and memberInfo.member_id =='admin' }">  
-					<li class="no_line"><a href="${contextPath}/admin/goods/adminGoodsMain.do">Manager</a></li>
+					<li class="no_line"><a href="${contextPath}/admin/goods/adminGoodsMain.do"><spring:message code="header.manager" text="*" /></a></li>
 				</c:if>
 			</ul>
 		</div>

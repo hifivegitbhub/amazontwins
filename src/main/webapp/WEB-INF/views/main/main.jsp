@@ -11,9 +11,9 @@
 
 <div id="ad_main_banner">
 	<ul class="bjqs">	 	
-		<li><img width="994" height="180" src="${contextPath}/resources/image/main_banner1.jpg"></li>
-		<li><img width="994" height="180" src="${contextPath}/resources/image/main_banner2.jpg"></li>
-		<li><img width="994" height="180" src="${contextPath}/resources/image/main_banner3.jpg"></li> 
+		<li><img width="1244" height="230" src="${contextPath}/resources/image/main_banner1.jpg"></li>
+		<li><img width="1244" height="230" src="${contextPath}/resources/image/main_banner2.jpg"></li>
+		<li><img width="1244" height="230" src="${contextPath}/resources/image/main_banner3.jpg"></li> 
 	</ul>
 </div>
 <div class="main_book">
