@@ -52,7 +52,7 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 			
 			
 		}else{
-			String message="아이디나 비밀번호가 틀립니다.";
+			String message="�븘�씠�뵒�굹 鍮꾨�踰덊샇媛� ��由쎈땲�떎.";
 			mav.addObject("message", message);
 			mav.setViewName("/member/signIn");
 		}
@@ -78,23 +78,23 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		request.setCharacterEncoding("utf-8");
 		String message = null;
 		ResponseEntity resEntity = null;
-//		HttpHeaders responseHeaders = new HttpHeaders();
-//		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
-//		try {
-//		    memberService.addMember(_memberVO);
-//		    message  = "<script>";
-//		    message +=" alert('ȸ�� ������ ���ƽ��ϴ�.�α���â���� �̵��մϴ�.');";
-//		    message += " location.href='"+request.getContextPath()+"/member/loginForm.do';";
-//		    message += " </script>";
-//		    
-//		}catch(Exception e) {
-//			message  = "<script>";
-//		    message +=" alert('�۾� �� ������ �߻��߽��ϴ�. �ٽ� �õ��� �ּ���');";
-//		    message += " location.href='"+request.getContextPath()+"/member/memberForm.do';";
-//		    message += " </script>";
-//			e.printStackTrace();
-//		}
-//		resEntity =new ResponseEntity(message, responseHeaders, HttpStatus.OK);
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		try {
+		    memberService.addMember(_memberVO);
+		    message  = "<script>";
+		    message +=" alert('successfully done, go sign in');";
+		    message += " location.href='"+request.getContextPath()+"/member/signIn.do';";
+		    message += " </script>";
+		    
+		}catch(Exception e) {
+			message  = "<script>";
+		    message +=" alert('something has wrong, please check it');";
+		    message += " location.href='"+request.getContextPath()+"/member/memberForm.do';";
+		    message += " </script>";
+			e.printStackTrace();
+		}
+		resEntity =new ResponseEntity(message, responseHeaders, HttpStatus.OK);
 		return resEntity;
 	}
 	

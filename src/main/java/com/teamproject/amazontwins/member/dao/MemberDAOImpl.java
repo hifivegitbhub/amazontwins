@@ -25,4 +25,9 @@ public class MemberDAOImpl implements MemberDAO {
 		String result =  sqlSession.selectOne("mapper.member.selectOverlappedID",id);
 		return result;
 	}
+	
+	@Override
+	public void addMember(MemberVO memberVO) throws DataAccessException{
+		sqlSession.insert("mapper.member.addMember", memberVO);
+	}
 }
