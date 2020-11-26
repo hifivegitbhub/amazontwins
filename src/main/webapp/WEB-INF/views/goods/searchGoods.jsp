@@ -31,7 +31,8 @@
 			<tr>
 				<td class="goods_image">
 					<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id}">
-						<img width="140" alt="" src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=main.jpg">
+						<%-- <img width="140" alt="" src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=main.jpg"> --%>
+						<img width="140" alt="" src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}">
 					</a>
 				</td>
 				<td class="goods_description">

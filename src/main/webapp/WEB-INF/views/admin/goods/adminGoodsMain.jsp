@@ -41,12 +41,13 @@ $(function() {
     }
 });
     
-function search_goods_list(fixeSearchPeriod){
-	var formObj=document.createElement("form");
+function search_goods_list(fixeSearchPeriod) {
+	var formObj = document.createElement("form");
 	var i_fixedSearch_period = document.createElement("input");
 	
-	i_fixedSearch_period.name="fixedSearchPeriod";
-	i_fixedSearch_period.value=searchPeriod;
+	i_fixedSearch_period.name = "fixedSearchPeriod";
+	i_fixedSearch_period.value = fixeSearchPeriod;
+	/* i_fixedSearch_period.value = searchPeriod; */
     formObj.appendChild(i_fixedSearch_period);
     document.body.appendChild(formObj); 
     formObj.method="get";
@@ -55,7 +56,7 @@ function search_goods_list(fixeSearchPeriod){
 }
 
 
-function  calcPeriod(search_period){
+function  calcPeriod(search_period) {
 	var dt = new Date();
 	var beginYear,endYear;
 	var beginMonth,endMonth;
@@ -119,12 +120,50 @@ function  calcPeriod(search_period){
 	//alert(beginDate+","+endDate);
 	return beginDate+","+endDate;
 }
+
+function fn_enable_detail_search(r_search) {
+	var frm_order_list = document.frm_order_list;
+	t_beginYear = frm_order_list.beginYear;
+	t_beginMonth = frm_order_list.beginMonth;
+	t_beginDay = frm_order_list.beginDay;
+	t_endYear = frm_order_list.endYear;
+	t_endMonth = frm_order_list.endMonth;
+	t_endDay = frm_order_list.endDay;
+	s_search_type = frm_order_list.s_search_type;
+	t_search_word = frm_order_list.t_search_word;
+	btn_search = frm_order_list.btn_search;
+	
+	if(r_search.value=='detail_search') {
+		//alert(r_search.value);
+		/* t_beginYear.disabled=false;
+		t_beginMonth.disabled=false;
+		t_beginDay.disabled=false;
+		t_endYear.disabled=false;
+		t_endMonth.disabled=false;
+		t_endDay.disabled=false; */
+		
+		s_search_type.disabled=false;
+		t_search_word.disabled=false;
+		btn_search.disabled=false;
+	}else{
+		/* t_beginYear.disabled=true;
+		t_beginMonth.disabled=true;
+		t_beginDay.disabled=true;
+		t_endYear.disabled=true;
+		t_endMonth.disabled=true;
+		t_endDay.disabled=true; */
+		
+		s_search_type.disabled=true;
+		t_search_word.disabled=true;
+		btn_search.disabled=true;
+	}
+}
 </script>
 </head>
 <body>
-	<div id="admin_main_product_search_wrap">
+	<div class="table_wrap">
 		<h3>&nbsp;상품 조회</h3>
-		<form method="post">	
+		<form name="frm_order_list" method="post">	
 			<table class="outer_table">
 				<tbody>
 					<tr>
@@ -132,8 +171,8 @@ function  calcPeriod(search_period){
 							조회 구분
 						</td>
 						<td>
-							<input type="radio" name="r_search" checked/> 등록일로조회 &nbsp;&nbsp;&nbsp;
-							<input type="radio" name="r_search" /> 상세조회 &nbsp;&nbsp;&nbsp;
+							<input type="radio" name="r_search" checked onClick="fn_enable_detail_search(this)" /> 등록일로조회 &nbsp;&nbsp;&nbsp;
+							<input type="radio" name="r_search" onClick="fn_enable_detail_search(this)" /> 상세조회 &nbsp;&nbsp;&nbsp;
 						</td>
 					</tr>
 					<tr>
@@ -163,14 +202,14 @@ function  calcPeriod(search_period){
 							조회 상세
 						</td>
 						<td>
-							<select name="search_condition" disabled >
+							<select name="s_search_type" disabled >
 								<option value="전체" checked>전체</option>
 								<option value="제품번호">상품번호</option>
 								<option value="제품이름">상품이름</option>
 								<option value="제조사">제조사</option>
 							</select>
-							<input type="text"  size="30"  disabled/>  
-							<input type="button"  value="조회" disabled/>
+							<input type="text" size="30" name="t_search_word" disabled/>  
+							<input type="button" name="btn_search" value="조회" onClick="fn_detail_search()" disabled/>
 						</td>
 					</tr>
 				</tbody>
@@ -180,84 +219,85 @@ function  calcPeriod(search_period){
 			
 		</form>
 	</div>
-<div class="clear"></div>
+	
+	<div class="clear"></div>
 
-<div id="admin_main_product_add">
-	<form action="${contextPath}/admin/goods/addNewGoodsForm.do">
-		<input type="submit" class="btn" value="상품 등록하기">
-	</form>
-</div>
+	<div id="admin_main_product_add">
+		<form action="${contextPath}/admin/goods/addNewGoodsForm.do">
+			<input type="submit" class="btn" value="상품 등록하기">
+		</form>
+	</div>
 
-<table class="list_view">
-	<thead>
-		<tr>
-			<td>상품번호</td>
-			<td>상품이름</td>
-			<td>저자</td>
-			<td>출판사</td>
-			<td>상품가격</td>
-			<td>입고일자</td>
-			<td>출판일</td>
-		</tr>
-	</thead>
-	<tbody align = center >
-		<c:choose>   
-		<c:when test="${empty newGoodsList }">			
+	<table class="list_view">
+		<thead>
 			<tr>
-		       <td colspan=8 class="fixed">
-				  <strong>조회된 상품이 없습니다.</strong>
-			   </td>
+				<td>상품번호</td>
+				<td>상품이름</td>
+				<td>저자</td>
+				<td>출판사</td>
+				<td>상품가격</td>
+				<td>입고일자</td>
+				<td>출판일</td>
 			</tr>
-		</c:when>
-		<c:otherwise>
-			<c:forEach var="item" items="${newGoodsList }">
-				<TR>       
-					<td>
-					  <strong>${item.goods_id }</strong>
-					</td>
-					<td>
-						<a href="${pageContext.request.contextPath}/admin/goods/modifyGoodsForm.do?goods_id=${item.goods_id}">
-							<strong>${item.goods_title } </strong>
-						</a> 
-					</td>
-					<td>
-						<strong>${item.goods_writer }</strong> 
-					</td>
-					<td>
-						<strong>${item.goods_publisher }</strong> 
-					</td>
-					<td>
-						<strong>${item.goods_sales_price }</strong>
-					</td>
-					<td>
-						<strong>${item.goods_credate }</strong> 
-					</td>
-					<td>
-						<c:set var="pub_date" value="${item.goods_published_date}" />
-						<c:set var="arr" value="${fn:split(pub_date,' ')}" />
-						<strong>
-						   <c:out value="${arr[0]}" />
-						</strong>
-					</td>
-				</TR>
-			</c:forEach>
-		</c:otherwise>
-		</c:choose>
-		<tr>
-			<td colspan=8 class="fixed">
-				<c:forEach   var="page" begin="1" end="10" step="1" >
-					<c:if test="${section >1 && page==1 }">
-						<a href="${contextPath}/admin/goods/adminGoodsMain.do?chapter=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp; &nbsp;</a>
-					</c:if>
-					<a href="${contextPath}/admin/goods/adminGoodsMain.do?chapter=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
-					<c:if test="${page ==10 }">
-						<a href="${contextPath}/admin/goods/adminGooodsMain.do?chapter=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
-					</c:if> 
-				</c:forEach> 
-			</td>
-		</tr>
-	</tbody>
-</table>
+		</thead>
+		<tbody align = center >
+			<c:choose>   
+			<c:when test="${empty newGoodsList }">			
+				<tr>
+			       <td colspan=8 class="fixed">
+					  <strong>조회된 상품이 없습니다.</strong>
+				   </td>
+				</tr>
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="item" items="${newGoodsList }">
+					<TR>       
+						<td>
+						  <strong>${item.goods_id }</strong>
+						</td>
+						<td>
+							<a href="${pageContext.request.contextPath}/admin/goods/modifyGoodsForm.do?goods_id=${item.goods_id}">
+								<strong>${item.goods_title } </strong>
+							</a> 
+						</td>
+						<td>
+							<strong>${item.goods_writer }</strong> 
+						</td>
+						<td>
+							<strong>${item.goods_publisher }</strong> 
+						</td>
+						<td>
+							<strong>$${item.goods_sales_price }</strong>
+						</td>
+						<td>
+							<strong>${item.goods_credate }</strong> 
+						</td>
+						<td>
+							<c:set var="pub_date" value="${item.goods_published_date}" />
+							<c:set var="arr" value="${fn:split(pub_date,' ')}" />
+							<strong>
+							   <c:out value="${arr[0]}" />
+							</strong>
+						</td>
+					</TR>
+				</c:forEach>
+			</c:otherwise>
+			</c:choose>
+			<tr>
+				<td colspan=8 class="fixed">
+					<c:forEach   var="page" begin="1" end="10" step="1" >
+						<c:if test="${section >1 && page==1 }">
+							<a href="${contextPath}/admin/goods/adminGoodsMain.do?chapter=${section-1}&pageNum=${(section-1)*10 +1 }">&nbsp; &nbsp;</a>
+						</c:if>
+						<a href="${contextPath}/admin/goods/adminGoodsMain.do?chapter=${section}&pageNum=${page}">${(section-1)*10 +page } </a>
+						<c:if test="${page ==10 }">
+							<a href="${contextPath}/admin/goods/adminGooodsMain.do?chapter=${section+1}&pageNum=${section*10+1}">&nbsp; next</a>
+						</c:if> 
+					</c:forEach> 
+				</td>
+			</tr>
+		</tbody>
+	</table>
 	
 <div class="clear"></div>
 	<br><br><br>

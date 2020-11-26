@@ -28,9 +28,9 @@ function result(){
 			<div id="detail_table">
 				<form action="${contextPath}/member/login.do" method="post">
 					<spring:message code="mainSignIn.id" text="*" /><br>
-					<input name="member_id" type="text" size="20" class="input"/>
+					<input name="member_id" type="text" size="20"/>
 					<br><spring:message code="mainSignIn.pw" text="*" /><br>
-					<input name="member_pw" type="password" size="20" class="input"/>
+					<input name="member_pw" type="password" size="20"/>
 					
 					<br>
 					

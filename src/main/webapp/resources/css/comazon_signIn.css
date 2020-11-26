@@ -61,13 +61,13 @@ article .signIn_btn {
 article .signIn_btn:hover {
 	background-color: rgb(225, 186, 107);
 }
-article .input {
+article #detail_table {
+	margin-top: 20px;
+}
+article #detail_table input {
 	width: 100%;
     height: 30px;
     margin: 5px 0px 10px 0px;
-}
-article #detail_table {
-	margin-top: 20px;
 }
 article #sub_wrap {
     width: 340px;
@@ -78,6 +78,7 @@ article .signUp_btn {
     height: 30px;
     cursor: pointer;
 }
+
 
 
 

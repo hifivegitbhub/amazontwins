@@ -8,39 +8,40 @@
 <meta charset="utf-8">
 <head>
 <script type="text/javascript">
-$(function() {
+/* $(function() {
     $("#published_date, #delivery_date").datepicker();
-});
+}); */
 
 var cnt=0;
-function fn_addFile() {
-	if(cnt == 0){
-		$("#d_file").append("<br>"+"<input  type='file' name='main_image' id='f_main_image' />");	  
-	}else{
-		$("#d_file").append("<br>"+"<input  type='file' name='detail_image"+cnt+"' />");
-	}
+function fn_addFile(){
+	  if(cnt == 0){
+		  $("#d_file").append("<input type='file' name='main_image' id='f_main_image' />" + "<br>");
+	  }else{
+		  $("#d_file").append("<input type='file' name='detail_image"+cnt+"' />" + "<br>");
+	  }
 	
 	cnt++;
 }
-  
-function fn_add_new_goods(obj) {
-	fileName = $('#f_main_image').val();
-	if(fileName != null && fileName != undefined){
-		obj.submit();
-	}else{
-		alert("메인 이미지는 반드시 첨부해야 합니다.");
-	return;
-}
-	 
-}
+
+
+function fn_add_new_goods(obj){
+		 fileName = $('#f_main_image').val();
+		 if(fileName != null && fileName != undefined){
+			 obj.submit();
+		 }else{
+			 alert("메인 이미지는 반드시 첨부해야 합니다.");
+			 return;
+		 }
+		 
+	}
 </script>    
 </head>
 
 <body>
 	<!-- <div id="admin_new_product_add_wrap"> -->
-		<div id="admin_main_product_search_wrap">
+		<div class="table_wrap">
 		<h3>&nbsp;새 상품 등록</h3>
-		<form method="post">	
+		<form action="${contextPath}/admin/goods/addNewGoods.do" method="post" enctype="multipart/form-data">
 			<table class="outer_table">
 				<tbody>
 					<tr>
@@ -50,10 +51,40 @@ function fn_add_new_goods(obj) {
 						<td>
 							<table class="inner_table">
 								<tr>
-									<td width=200 >제품분류</td>
-									<td width=500><select name="goods_sort">
-											<option value="컴퓨터와 인터넷" selected>컴퓨터와 인터넷
-											<option value="디지털 기기">디지털 기기
+									<td>제품분류</td>
+									<td>
+										<select name="goods_sort">
+											<option value="Arts & Photography">Arts & Photography
+											<option value="Biographies & Memoirs">Biographies & Memoirs
+											<option value="Business & Money">Business & Money
+											<option value="Children's eBooks">Children's eBooks
+											<option value="Comics, Manga & Graphic Novels">Comics, Manga & Graphic Novels
+											<option value="Computers & Technology">Computers & Technology
+											<option value="Cookbooks, Food & Wine">Cookbooks, Food & Wine
+											<option value="Crafts, Hobbies & Home">Crafts, Hobbies & Home
+											<option value="Education & Teaching">Education & Teaching
+											<option value="Engineering & Transportation">Engineering & Transportation
+											<option value="Foreign Languages">Foreign Languages
+											<option value="Health, Fitness & Dieting">Health, Fitness & Dieting
+											<option value="History">History
+											<option value="Humor & Entertainment">Humor & Entertainment
+											<option value="Law">Law
+											<option value="Lesbian, Gay, Bisexual & Transgender eBooks">Lesbian, Gay, Bisexual & Transgender eBooks
+											<option value="Literature & Fiction">Literature & Fiction
+											<option value="Medical eBooks">Medical eBooks
+											<option value="Mystery, Thriller & Suspense">Mystery, Thriller & Suspense
+											<option value="Nonfiction">Nonfiction
+											<option value="Parenting & Relationships">Parenting & Relationships
+											<option value="Politics & Social Sciences">Politics & Social Sciences
+											<option value="Reference">Reference
+											<option value="Religion & Spirituality">Religion & Spirituality
+											<option value="Romance">Romance
+											<option value="Science & Math">Science & Math
+											<option value="Science Fiction & Fantasy">Science Fiction & Fantasy
+											<option value="Self-Help">Self-Help
+											<option value="Sports & Outdoors">Sports & Outdoors
+											<option value="Teen & Young Adult">Teen & Young Adult
+											<option value="Travel">Travel
 										</select>
 									</td>
 								</tr>
@@ -90,7 +121,8 @@ function fn_add_new_goods(obj) {
 								
 								<tr>
 									<td>제품출판일</td>
-									<td><input  name="goods_published_date" type="text" id="published_date" size="40" /></td>
+									<!-- <td><input name="goods_published_date" type="text" id="published_date" size="40" /></td> -->
+									<td><input name="goods_published_date"  type="date" size="40" /></td>
 								</tr>
 								
 								<tr>
@@ -110,19 +142,20 @@ function fn_add_new_goods(obj) {
 								
 								<tr>
 									<td>제품 도착 예정일</td>
-									<td><input name="goods_delivery_date"  type="text" id="delivery_date" size="40" /></td>
+									<!-- <td><input name="goods_delivery_date" type="text" id="delivery_date" size="40" /></td> -->
+									<td><input name="goods_delivery_date" type="date" size="40" /></td>
 								</tr>
 								
 								<tr>
 									<td>제품종류</td>
 									<td>
 										<select name="goods_status">
-											<option value="bestseller">베스트셀러</option>
-											<option value="steadyseller">스테디셀러</option>
-											<option value="newbook" selected>신간</option>
-											<option value="on_sale">판매중</option>
-											<option value="buy_out">품절</option>
-											<option value="out_of_print">절판</option>
+											<option value="bestseller">Best sellers</option>
+											<option value="steadyseller">Steady sellers</option>
+											<option value="newbook" selected>New Releases</option>
+											<option value="on_sale">On Sale</option>
+											<option value="buy_out">Out of Order</option>
+											<option value="out_of_print">Out of Print</option>
 										</select>
 									</td>
 								</tr>
@@ -187,9 +220,11 @@ From the surprising way he is greeted by a lovable giant, to the unique curricul
 						<td>
 							<table class="inner_table">
 								<tr>
-									<td align="right">이미지파일 첨부</td>
+									<!-- <td align="right">이미지파일 첨부</td> -->
 						            
-						            <td  align="left"> <input type="button" class="btn" value="파일 추가" onClick="fn_addFile()"/></td>
+						            <td align="left">
+						            	<input type="button" class="btn" value="파일 추가" onClick="fn_addFile()"/>
+									</td>
 						            <td>
 							            <div id="d_file">
 							            </div>

@@ -208,7 +208,7 @@ aside #banner {
 	list-style: none; padding: 5px;
 }
 #refine ul li {
-	background-position: left; line-height: 1.5em; background-image: url("../imgs/notice_li.gif"); background-repeat: no-repeat;
+	background-position: left; line-height: 1.5em; background-repeat: no-repeat;
 }
 #refine label {
 	margin: 0px 0px 0px 5px;
@@ -310,7 +310,7 @@ article table#list_view td.goods_image {
 	width: 80px;
 }
 article table#list_view td.goods_description {
-	width: 490px; padding-left: 5px;
+	width: 700px; padding-left: 5px;
 }
 article table#list_view td.goods_description .writer_press {
 	padding: 2px 5px; color: rgb(51, 102, 255);
@@ -559,66 +559,59 @@ ul.tabs li.active a:hover {
 
 
 /* admin */
-/* table, th, td {
-	border: 1px solid red;
-}
- */
-#admin_main_product_search_wrap {
+.table_wrap {
 	padding: 10px 0px;
 }
-#admin_main_product_search_wrap .outer_table {
-	width: 100%;
-    color: rgb(51, 51, 51);
-    font-size: 0.75em;
-    margin-top: 10px;
-    border-top-color: rgb(51, 51, 51);
-    border-top-width: 2px;
-    border-top-style: solid;
-    border-collapse: collapse;
+.table_wrap .outer_table {
+	width: 100%; color: rgb(51, 51, 51); font-size: 0.75em; margin-top: 10px; border-top-color: rgb(51, 51, 51); border-top-width: 2px; border-top-style: solid; border-collapse: collapse;
 }
-#admin_main_product_search_wrap .first_td {
-	font-weight: bold; background-color: rgb(235, 235, 235);
+.table_wrap .first_td {
+	font-weight: bold; background-color: rgb(235, 235, 235); text-align: center;
 }
-#admin_main_product_search_wrap .outer_table td {
-	margin: 0px;
-    padding: 10px 10px;
-    border-bottom-color: rgb(153, 153, 153);
-    border-bottom-width: 1px;
-    border-bottom-style: dotted;
+.table_wrap .first_td_order {
+	width: 200px; font-weight: bold; background-color: rgb(235, 235, 235); text-align: center;
 }
-#admin_main_product_search_wrap .outer_table .inner_table tr td {
-	border-bottom-style: none;
+.table_wrap .outer_table td {
+	margin: 0px; padding: 10px 10px; border-bottom-color: rgb(153, 153, 153); border-bottom-width: 1px; border-bottom-style: dotted;
 }
-#admin_main_product_search_wrap .search_period {
-	cursor: pointer;
-    padding: 2px 8px;
-    background-color: white;
-    border-radius: 3px;
-    border-color: black;
-    border: 1px solid rgb(235, 235, 235);
-    outline: 0px;
+.table_wrap .outer_table .inner_table tr td {
+	border-bottom-style: none; padding: 8px 10px; font-size: 0.8em;
 }
-#admin_main_product_search_wrap .search_period:hover {
+.table_wrap .outer_table .inner_table tr td:first-child {
+	text-align: right;
+}
+.table_wrap .outer_table .inner_table tr td input {
+    height: 25px;
+}
+.table_wrap .outer_table .inner_table tr td select {
+    height: 25px;
+}
+.table_wrap .outer_table .inner_table #d_file input {
+    height: 25px;
+}
+.table_wrap .outer_table .inner_table #d_file input:hover {
+    cursor: pointer;
+}
+.table_wrap .search_period {
+	cursor: pointer; padding: 2px 8px; background-color: white; border-radius: 3px; border-color: black; border: 1px solid rgb(235, 235, 235); outline: 0px;
+}
+.table_wrap .search_period:hover {
 	background-color: rgb(235, 235, 235);	
 }
-#admin_main_product_search_wrap #to {
+.table_wrap #to {
 	width: 100px;
 }
 #admin_main_product_add {
 	text-align: right;
 }
 article .btn {
-	padding: 2px 4px;
-    cursor: pointer;
+	padding: 2px 4px; cursor: pointer;
 }
 article .btn_medium {
-	padding: 8px 15px;
-    cursor: pointer;
-    border: 1px solid gray;
+	padding: 8px 15px; cursor: pointer; border: 1px solid gray;
 }
 article .btn_medium:hover {
-	background: rgb(255, 216, 137);
-	border: 1px solid gray;
+	background: rgb(255, 216, 137); border: 1px solid gray;
 }
 #admin_main_product_add .search_period {
 	padding: 5px 10px; border: 1px solid rgb(27, 34, 43); border-radius: 3px;
@@ -642,7 +635,7 @@ article .btn_medium:hover {
 	width: 80px;
 }
 .list_view td.goods_description {
-	width: 500px; padding-left: 5px;
+	width: 490px; padding-left: 5px;
 }
 .list_view td.goods_description .writer_press {
 	padding: 2px 5px; color: rgb(51, 102, 255);
@@ -673,6 +666,9 @@ article .btn_medium:hover {
 }
 .list_view td.buy_btns ul li a:hover {
 	color: rgb(255, 255, 255); background-color: rgb(0, 51, 102);
+}
+.list_view .td_wrapper {
+	padding-left: 10px;
 }
 .detail_table {
 	margin: 20px 0px 0px;
@@ -797,7 +793,7 @@ article h1_TITLE {
 .del_row_line{
 	margin: 0px; padding: 10px 0px; border-bottom-color: rgb(153, 153, 153); border-bottom-width: 1px;     border-bottom-style: none;border-top-style:solid; border-top-width: 1px;border-top-color:#ffffff;
 }
-
+/* admin */
 
 
 

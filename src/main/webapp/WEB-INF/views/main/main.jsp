@@ -27,8 +27,8 @@
 				<img class="link"  src="${contextPath}/resources/image/1px.gif"> 
 			</a>
 			 
-			<img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=main.jpg">
-			<%-- <img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}"> --%>
+			<%-- <img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=main.jpg"> --%>
+			<img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}">
 			
 			<div class="title">
 				<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id}">${item.goods_title }</a>
@@ -55,8 +55,8 @@
 			<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
 				<img class="link"  src="${contextPath}/resources/image/1px.gif"> 
 			</a>
-		<img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=main.jpg">
-		 <%-- <img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}"> --%>
+		<%-- <img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=main.jpg"> --%>
+		<img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}">
 		
 		<div class="title">
 			<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id}">${item.goods_title }</a>
@@ -91,8 +91,8 @@
 		  <a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
 	       <img class="link" src="${contextPath}/resources/image/1px.gif"> 
 	      </a>
-		 <img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=main.jpg">
-		 <%-- <img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}"> --%>
+		 <%-- <img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=main.jpg"> --%>
+		 <img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}">
 		
 		<div class="title">
 			<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id}">${item.goods_title }</a>

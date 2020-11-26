@@ -87,7 +87,7 @@ public class AdminGoodsControllerImpl extends BaseController  implements AdminGo
 
 	
 	@RequestMapping(value="/addNewGoods.do" ,method={RequestMethod.POST})
-	public ResponseEntity addNewGoods(MultipartHttpServletRequest multipartRequest, HttpServletResponse response)  throws Exception {
+	public ResponseEntity addNewGoods(MultipartHttpServletRequest multipartRequest, HttpServletResponse response) throws Exception {
 		multipartRequest.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
 		String imageFileName = null;
