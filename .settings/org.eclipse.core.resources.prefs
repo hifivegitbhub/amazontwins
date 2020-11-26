@@ -1,4 +1,11 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/teamproject/amazontwins/order/controller/OrderController.java=UTF-8
+encoding//src/main/java/com/teamproject/amazontwins/order/dao/OrderDAO.java=UTF-8
+encoding//src/main/java/com/teamproject/amazontwins/order/dao/OrderDAOImpl.java=UTF-8
+encoding//src/main/java/com/teamproject/amazontwins/order/service/OrderService.java=UTF-8
+encoding//src/main/java/com/teamproject/amazontwins/order/service/OrderServiceImpl.java=UTF-8
+encoding//src/main/java/com/teamproject/amazontwins/order/vo/OrderVO.java=UTF-8
 encoding//src/main/webapp/WEB-INF/messages/message_de.properties=UTF-8
 encoding//src/main/webapp/WEB-INF/messages/message_en.properties=UTF-8
 encoding//src/main/webapp/WEB-INF/messages/message_ko.properties=UTF-8
+encoding/<project>=UTF-8

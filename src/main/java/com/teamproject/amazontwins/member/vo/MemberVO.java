@@ -152,9 +152,11 @@ public class MemberVO {
 	
 	
 	public String getRoadAddress() {
+		
 		return roadAddress;
 	}
 	public void setRoadAddress(String roadAddress) {
+		System.out.println("roadAddress: "+roadAddress);
 		this.roadAddress = roadAddress;
 	}
 	public String getJibunAddress() {

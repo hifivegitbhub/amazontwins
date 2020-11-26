@@ -11,8 +11,8 @@ public class OrderVO {
 	private String goods_title;
 	private int goods_sales_price;
 	private int total_goods_price;
-	private int cart_goods_qty; //��ٱ��Ͽ� ��� ��ǰ ��
-	private int order_goods_qty; //���� �ֹ�  ��ǰ ��
+	private int cart_goods_qty; //장占쏙옙袂占쏙옙臼占� 占쏙옙占� 占쏙옙품 占쏙옙
+	private int order_goods_qty; //占쏙옙占쏙옙 占쌍뱄옙  占쏙옙품 占쏙옙
 	private String orderer_name;
 	private String receiver_name;
 	private String receiver_hp1;
@@ -29,9 +29,9 @@ public class OrderVO {
 	private String pay_method;
 	private String card_com_name;
 	private String card_pay_month;
-	private String pay_orderer_hp_num; //�޴��� ���� ��ȭ��ȣ
+	private String pay_orderer_hp_num; //占쌨댐옙占쏙옙 占쏙옙占쏙옙 占쏙옙화占쏙옙호
 	private String pay_order_time;
-	private String delivery_state;  //���� �ֹ� ��ǰ ��� ����
+	private String delivery_state;  //占쏙옙占쏙옙 占쌍뱄옙 占쏙옙품 占쏙옙占� 占쏙옙占쏙옙
 	
 	private String final_total_price;
 	private int goods_qty;
@@ -126,12 +126,14 @@ public class OrderVO {
 		return orderer_name;
 	}
 	public void setOrderer_name(String orderer_name) {
+		System.out.println("orderer_name: "+orderer_name);
 		this.orderer_name = orderer_name;
 	}
 	public String getReceiver_name() {
 		return receiver_name;
 	}
 	public void setReceiver_name(String receiver_name) {
+		System.out.println("receiver_name"+receiver_name);
 		this.receiver_name = receiver_name;
 	}
 	
@@ -179,6 +181,7 @@ public class OrderVO {
 		return delivery_address;
 	}
 	public void setDelivery_address(String delivery_address) {
+		System.out.println("delivery_address: "+delivery_address);
 		this.delivery_address = delivery_address;
 	}
 	public String getDelivery_message() {
