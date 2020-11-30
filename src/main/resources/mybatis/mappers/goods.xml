@@ -34,7 +34,7 @@
 	   <result property="fileType" column="fileType" />
 	</resultMap>
 
-	<select id="selectGoodsList" parameterType="String" resultMap="goodsResult"   >
+	<select id="selectGoodsList" parameterType="String" resultMap="goodsResult" >
         <![CDATA[
         select t.*
 		  from (
@@ -45,7 +45,7 @@
 		           and goods_status = #{goodsStatus}
 		           and d.goods_id >= 1000
 		         order by g.goods_creDate desc) t
-		 where rowNum < 16
+		 where rowNum < 19
 	    ]]>
 	</select>
 	

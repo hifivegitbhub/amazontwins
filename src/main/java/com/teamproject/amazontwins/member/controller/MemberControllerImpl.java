@@ -24,38 +24,38 @@ import com.teamproject.amazontwins.member.vo.MemberVO;
 
 @Controller("memberController")
 @RequestMapping(value="/member")
-public class MemberControllerImpl extends BaseController implements MemberController{
+public class MemberControllerImpl extends BaseController implements MemberController {
 	@Autowired
 	MemberService memberService;
 	@Autowired
 	MemberVO memberVO;
 	
 	@Override
-	@RequestMapping(value="/login.do" ,method = RequestMethod.POST)
+	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam Map<String, String> loginMap,
 			                  HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		 memberVO=memberService.login(loginMap);
-		if(memberVO!= null && memberVO.getMember_id()!=null){
-			HttpSession session=request.getSession();
-			session=request.getSession();
+		memberVO = memberService.login(loginMap);
+		
+		if(memberVO != null && memberVO.getMember_id() != null) {
+			HttpSession session = request.getSession();
+			session = request.getSession();
 			session.setAttribute("isLogOn", true);
-			session.setAttribute("memberInfo",memberVO);
+			session.setAttribute("memberInfo", memberVO);
 			
-			String action=(String)session.getAttribute("action");
-			if(action!=null && action.equals("/order/orderEachGoods.do")){
-				mav.setViewName("forward:"+action);
-			}else{
+			String action = (String)session.getAttribute("action");
+		
+			if(action != null && action.equals("/order/orderEachGoods.do")) {
+				mav.setViewName("forward:" + action);
+			} else {
 				mav.setViewName("redirect:/main/main.do");	
 			}
-			
-			
-			
-		}else{
-			String message="�븘�씠�뵒�굹 鍮꾨�踰덊샇媛� ��由쎈땲�떎.";
+		} else {
+			String message = "아이디나 비밀번호가 틀립니다.";
 			mav.addObject("message", message);
 			mav.setViewName("/member/signIn");
 		}
+		
 		return mav;
 	}
 	

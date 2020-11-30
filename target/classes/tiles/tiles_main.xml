@@ -3,6 +3,7 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
+
 	<definition name="baseLayout"
 		template="/WEB-INF/views/common/layout.jsp">
 		<put-attribute name="title" value="layout page" />
@@ -10,7 +11,11 @@
 		<put-attribute name="side" value="/WEB-INF/views/common/side.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp" />
-		<!-- <put-attribute name="quickMenu" value="/WEB-INF/views/common/quickMenu.jsp" /> -->
+	</definition>
+	
+	<definition name="/main/main" extends="baseLayout">
+		<put-attribute name="title" value="Comazon.com: Online Shopping for Everything!" />
+		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp" />
 	</definition>
 	
 	<definition name="signInLayout"
@@ -21,8 +26,4 @@
 		<put-attribute name="footer" value="/WEB-INF/views/common/footerSignIn.jsp" />
 	</definition>
 
-	<definition name="/main/main" extends="baseLayout">
-		<put-attribute name="title" value="Comazon.com: Online Shopping for Everything!" />
-		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp" />
-	</definition>
 </tiles-definitions>

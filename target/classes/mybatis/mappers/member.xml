@@ -56,10 +56,10 @@
 	   where member_id = #{id}
 	</select>
 	
-  <insert id="insertNewMember"  parameterType="memberVO">
+  <insert id="addMember"  parameterType="memberVO">
   <![CDATA[
     	insert into t_shopping_member(member_id,
-				 					                  member_pw,
+				 					 member_pw,
                                      member_name,
                                      member_gender,
                                      member_birth_y,
@@ -103,7 +103,7 @@
                                     #{jibunAddress},
                                     #{namujiAddress})
                                   
-                                      
    ]]>      
+   
   </insert>
 </mapper>
