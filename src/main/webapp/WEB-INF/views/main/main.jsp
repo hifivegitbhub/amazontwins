@@ -63,8 +63,8 @@
 		</div>
 			 
 		<div class="price">
-			<fmt:formatNumber  value="${item.goods_price}" type="number" var="goods_price" />
-			<span class="comazon"><spring:message code="main.comazonprice" text="*" /></span> <span class="goods">$${goods_price}</span>
+			<fmt:formatNumber  value="${item.goods_sales_price}" type="number" var="goods_sales_price" />
+			<span class="comazon"><spring:message code="main.comazonprice" text="*" /></span> <span class="goods">$${goods_sales_price}</span>
 		</div>
 	</div>
 	 <c:if test="${goods_count==15   }">
@@ -99,8 +99,8 @@
 		</div> 
 		
 		<div class="price">
-	    	<fmt:formatNumber  value="${item.goods_price}" type="number" var="goods_price" />
-			<span class="comazon"><spring:message code="main.comazonprice" text="*" /></span> <span class="goods">$${goods_price}</span>
+	    	<fmt:formatNumber  value="${item.goods_sales_price}" type="number" var="goods_sales_price" />
+			<span class="comazon"><spring:message code="main.comazonprice" text="*" /></span> <span class="goods">$${goods_sales_price}</span>
 		</div>
 	</div>
 	 <%-- <c:if test="${goods_count==15   }">
