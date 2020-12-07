@@ -8,6 +8,9 @@ public class OrderVO {
 	private String member_id;
 	private int order_id;
 	private int goods_id;
+	/* by me */
+	/* private int goods_price; */
+	
 	private String goods_title;
 	private int goods_sales_price;
 	private int total_goods_price;
@@ -92,6 +95,7 @@ public class OrderVO {
 		return final_total_price;
 	}
 	public void setFinal_total_price(String final_total_price) {
+		System.out.println("setFinal_total_price: "+final_total_price);
 		this.final_total_price = final_total_price;
 	}
 	public int getGoods_qty() {
@@ -126,14 +130,14 @@ public class OrderVO {
 		return orderer_name;
 	}
 	public void setOrderer_name(String orderer_name) {
-		System.out.println("orderer_name: "+orderer_name);
+		/* System.out.println("orderer_name: "+orderer_name); */
 		this.orderer_name = orderer_name;
 	}
 	public String getReceiver_name() {
 		return receiver_name;
 	}
 	public void setReceiver_name(String receiver_name) {
-		System.out.println("receiver_name"+receiver_name);
+		/* System.out.println("receiver_name"+receiver_name); */
 		this.receiver_name = receiver_name;
 	}
 	
@@ -181,7 +185,7 @@ public class OrderVO {
 		return delivery_address;
 	}
 	public void setDelivery_address(String delivery_address) {
-		System.out.println("delivery_address: "+delivery_address);
+		/* System.out.println("delivery_address: "+delivery_address); */
 		this.delivery_address = delivery_address;
 	}
 	public String getDelivery_message() {

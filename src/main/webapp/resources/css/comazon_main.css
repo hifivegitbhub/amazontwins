@@ -148,17 +148,18 @@ header #localechoice:hover {
     color: #000;
     /* text-shadow: 1px 1px 1px #000; */
     border-radius: 5px;
-    background-color: rgba(255, 148, 77, 1); /* ED9220 */
-    background-image: linear-gradient(to top left,
+    background-color: rgba(255, 216, 152, 1); /* F0C148 */
+    /* background-image: linear-gradient(to top bottom,
                                       rgba(0, 0, 0, .2),
-                                      rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
-    box-shadow: inset 2px 2px 3px rgba(255, 203, 0, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
+                                      rgba(0, 0, 0, .2) 10%,
+                                      rgba(0, 0, 0, 0));*/
+    box-shadow: inset 2px 2px 3px rgba(255, 203, 0, .4),
+                inset -2px -2px 3px rgba(0, 0, 0, .4); 
+   	margin-top: 10px;
 }
 
 .buyButton:hover {
-    background-color: rgba(247, 156, 42, 1);
+    background-color: rgba(255, 225, 170, 1);
 }
 
 .buyButton:active {
@@ -175,11 +176,11 @@ header #localechoice:hover {
     color: #000;
     /* text-shadow: 1px 1px 1px #000; */
     border-radius: 5px;
-    background-color: rgba(250, 250, 250, .9);
-    background-image: linear-gradient(to top left,
+    background-color: rgba(240, 240, 240, .9);
+    /*background-image: linear-gradient(to top left,
                                       rgba(0, 0, 0, .2),
                                       rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
+                                      rgba(0, 0, 0, 0));*/
     box-shadow: inset 2px 2px 3px rgba(246, 246, 243, .6),
                 inset -2px -2px 3px rgba(0, 0, 0, .6);
     margin-top: 10px;
@@ -206,11 +207,11 @@ header #localechoice:hover {
     color: #000;
     /* text-shadow: 1px 1px 1px #000; */
     border-radius: 5px;
-    background-color: rgba(250, 250, 250, .9);
-    background-image: linear-gradient(to top left,
+    background-color: rgba(240, 240, 240, .9);
+    /* background-image: linear-gradient(to top left,
                                       rgba(0, 0, 0, .2),
                                       rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
+                                      rgba(0, 0, 0, 0)); */
     box-shadow: inset 2px 2px 3px rgba(246, 246, 243, .8),
                 inset -2px -2px 3px rgba(0, 0, 0, .8);
     margin-top: 10px;
@@ -924,14 +925,221 @@ ul.tabs li.active a:hover {
     border: 1px solid gray;
 }
 
+/* related cart list */
 
 
+/*라디오버튼 숨김*/
+#tab1{
+	display: none;
+}
+#label_tab1{
+	display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid transparent;
+}
+
+#tab2{
+	display: none;
+}
+#label_tab2{
+	display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid transparent;
+}
+
+#tab3{
+	display: none;
+}
+#label_tab3{
+	display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid transparent;
+}
+
+#tab4{
+	display: none;
+}
+#label_tab4{
+	display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid transparent;
+}
+
+#label_tab1:hover{
+	color: #2e9cdf;
+    cursor: pointer;
+}
+
+#label_tab2:hover{
+	color: #2e9cdf;
+    cursor: pointer;
+}
+#label_tab3:hover{
+	color: #2e9cdf;
+    cursor: pointer;
+}
+#label_tab4:hover{
+	color: #2e9cdf;
+    cursor: pointer;
+}
+
+/*input 클릭시, label 스타일*/
+#tab1:checked + #label_tab1 {
+      color: #555;
+      border: 1px solid #ddd;
+      border-top: 2px solid #2e9cdf;
+      border-bottom: 1px solid #ffffff;
+}
+
+#tab2:checked + #label_tab2 {
+      color: #555;
+      border: 1px solid #ddd;
+      border-top: 2px solid #2e9cdf;
+      border-bottom: 1px solid #ffffff;
+}
+#tab3:checked + #label_tab3 {
+      color: #555;
+      border: 1px solid #ddd;
+      border-top: 2px solid #2e9cdf;
+      border-bottom: 1px solid #ffffff;
+}
+#tab4:checked + #label_tab4 {
+      color: #555;
+      border: 1px solid #ddd;
+      border-top: 2px solid #2e9cdf;
+      border-bottom: 1px solid #ffffff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+	display: block;
+}
 
 
+#content1 {
+	display: none;
+	padding: 20px 0 0;
+	border-top: 1px solid #ddd;
+}
 
+#content2 {
+	display: none;
+	padding: 20px 0 0;
+	border-top: 1px solid #ddd;
+}
 
+#content3 {
+	display: none;
+	padding: 20px 0 0;
+	border-top: 1px solid #ddd;
+}
+#content4 {
+	display: none;
+	padding: 20px 0 0;
+	border-top: 1px solid #ddd;
+}
 
+.tbl_txt{
+	font-weight: 600;
+	font-size: 1rem;
+}
 
+.tbl_cnt{
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+.tbl_cnt_price{
+	font-weight: 600;
+	font-size: 1rem;
+	text-decoration: line-through;
+}
+
+#p_final_totalPrice{
+	color: tomato;
+	font-size: 2rem;
+}
+
+#visibility_collapse_table{
+	display:none;
+}
+
+#visibility_collapse_table1{
+	display:none;
+}
+#visibility_collapse_table2{
+	display:none;
+}
+
+#payment_msg{
+	text-align: left;
+	font-size: 2rem;
+	margin: 0px 10px;
+	font-weight: 600;
+}
+#payment_tbl{
+	/* border-style: dotted; */
+	width: 700px; font-size: 0.75em; float: left;
+	margin: 10px 10px 20px 10px;
+}
+
+#card_com_name{
+	position: relative; 
+	width: 200px; 
+	border: 1px solid #999; 
+	z-index: 1;
+}
+
+#card_pay_month{
+	position: relative; 
+	width: 200px; 
+	border: 1px solid #999; 
+	z-index: 1;
+}
+
+.pay_method_select{
+	font-size: large; 
+	font-weight: 600;
+	margin: 0px 10px;
+}
+
+.omit_list{
+	display: none;
+}
+
+.order_result_title{
+	font-size: 2rem;
+	color: #111111;
+	font-weight: 600;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	/* border-style: dotted; */
+	text-align: left;
+}
+
+#order_result_contents{
+	text-align: left;
+}
 
 /* admin */
 .table_wrap {

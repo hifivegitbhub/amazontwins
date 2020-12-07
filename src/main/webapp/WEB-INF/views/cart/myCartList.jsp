@@ -160,11 +160,12 @@ function fn_order_all_cart_goods(){
 	if(length>1){
 		for(var i=0; i<length;i++){
 			if(checked_goods[i].checked==true){
+				
 				order_goods_id=checked_goods[i].value;
 				order_goods_qty=cart_goods_qty[i].value;
 				cart_goods_qty[i].value="";
 				cart_goods_qty[i].value=order_goods_id+":"+order_goods_qty;
-				//alert(select_goods_qty[i].value);
+				
 				console.log(cart_goods_qty[i].value);
 			}
 		}	
@@ -183,152 +184,176 @@ function fn_order_all_cart_goods(){
 </script>
 </head>
 <body>
-	<table class="list_view">
+	
+	<input id="tab1" type="radio" name="tabs" checked> <!--디폴트 메뉴-->
+    <label id="label_tab1" for="tab1">Your List</label>
+
+    <input id="tab2" type="radio" name="tabs">
+    <label id="label_tab2" for="tab2">Your Idea List</label>
+
+    <input id="tab3" type="radio" name="tabs">
+    <label id="label_tab3" for="tab3">Your Friends</label>
+
+    <input id="tab4" type="radio" name="tabs">
+    <label id="label_tab4" for="tab4">List Help</label>
+
+    <section id="content1">
+        <table class="list_view">
 		<tbody align=center >
-			<tr style="background:#33ff00" >
-				<td class="fixed" >Division</td>
-				<td colspan=2 class="fixed">Product Name</td>
-				<td>Selling Price</td>
-				<td>Discounted Price</td>
-				<td>Quantity</td>
-				<td>Total</td>
-				<td>Order</td>
+			<tr style="background:#eeeeee" >
+				<td class="tbl_txt">Book</td>
+				<td class="tbl_txt" colspan=2 class="fixed">Book Name</td>
+				<td class="tbl_txt">Selling Price</td>
+				<td class="tbl_txt">Discounted Price</td>
+				<td class="tbl_txt">Quantity</td>
+				<td class="tbl_txt">Total</td>
+				<td class="tbl_txt">Order</td>
 			</tr>
 			
-			 <c:choose>
-				    <c:when test="${ empty myCartList }">
-				    <tr>
+			<c:choose>
+				<c:when test="${ empty myCartList }">
+					<tr>
 				       <td colspan=8 class="fixed">
-				         <strong>장바구니에 상품이 없습니다.</strong>
+				         	<strong>Empty shopping basket</strong>
 				       </td>
-				     </tr>
-				    </c:when>
-			        <c:otherwise>
-			 <tr>       
-               <form name="frm_order_all_cart">
-				      <c:forEach var="item" items="${myGoodsList }" varStatus="cnt">
-				       <c:set var="cart_goods_qty" value="${myCartList[cnt.count-1].cart_goods_qty}" />
-				       <c:set var="cart_id" value="${myCartList[cnt.count-1].cart_id}" />
-					<td><input type="checkbox" name="checked_goods"  checked  value="${item.goods_id }"  onClick="calcGoodsPrice(${item.goods_sales_price },this)"></td>
-					<td class="goods_image">
-					<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
-						<img width="75" alt="" src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}"  />
-					</a>
-					</td>
-					<td>
-						<h2>
-							<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">${item.goods_title }</a>
-						</h2>
-					</td>
-					<td class="price"><span>$ ${item.goods_price }</span></td>
-					<td>
-					   <strong>
-					      <fmt:formatNumber  value="${item.goods_price*0.9}" type="number" var="discounted_price" />
-				            $ ${discounted_price}(Discount 10%)
-				         </strong>
-					</td>
-					<td>
-					   <input type="text" id="cart_goods_qty" name="cart_goods_qty" size=3 value="${cart_goods_qty}"><br>
-						<a href="javascript:modify_cart_qty(${item.goods_id },${item.goods_price*0.9 },${cnt.count-1 });" >
-						    <img width=25 alt=""  src="${contextPath}/resources/image/btn_modify_qty.jpg">
+				    </tr>
+				</c:when>
+			<c:otherwise>
+			<tr>       
+            	<form name="frm_order_all_cart">
+					<c:forEach var="item" items="${myGoodsList }" varStatus="cnt">
+				    	<c:set var="cart_goods_qty" value="${myCartList[cnt.count-1].cart_goods_qty}" />
+				        <c:set var="cart_id" value="${myCartList[cnt.count-1].cart_id}" />
+						<td><input type="checkbox" name="checked_goods"  checked  value="${item.goods_id }"  onClick="calcGoodsPrice(${item.goods_sales_price },this)"></td>
+						<td class="goods_image">
+						<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id }">
+							<img width="100" alt="" src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}"  />
 						</a>
 					</td>
-					<td>
-					   <strong>
-					    <fmt:formatNumber  value="${item.goods_price*0.9*cart_goods_qty}" type="number" var="total_sales_price" />
-				         $ ${total_sales_price}
-					</strong> </td>
-					<td>
-					      <a href="javascript:fn_order_each_goods('${item.goods_id }','${item.goods_title }','${item.goods_sales_price}','${item.goods_fileName}');">
-					       	<img width="75" alt=""  src="${contextPath}/resources/image/btn_order.jpg">
-							</a><br>
-					 	<a href="#"> 
-					 	   <img width="75" alt=""
-							src="${contextPath}/resources/image/btn_order_later.jpg">
-						</a><br> 
-						<a href="#"> 
-						   <img width="75" alt=""
-							src="${contextPath}/resources/image/btn_add_list.jpg">
-						</A><br> 
-						<a href="javascript:delete_cart_goods('${cart_id}');""> 
-						   <img width="75" alt=""
-							   src="${contextPath}/resources/image/btn_delete.jpg">
-					   </a>
+					<td class="tbl_cnt">
+						<h2>
+							<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_sales_price }">${item.goods_title }</a>
+						</h2>
 					</td>
-			</tr>
-				<c:set  var="totalGoodsPrice" value="${totalGoodsPrice+item.goods_sales_price*0.9*cart_goods_qty }" />
+					<td class="tbl_cnt_price"><span>$${item.goods_sales_price }</span></td>
+					<td class="tbl_cnt">
+					   <strong>
+					      <fmt:formatNumber  value="${item.goods_sales_price}" type="number" var="discounted_price" />
+				            $${discounted_price} (Discount 10%)
+				         </strong>
+					</td>
+					<td class="tbl_cnt">
+					    <input type="text" id="cart_goods_qty" name="cart_goods_qty" size=3 value="${cart_goods_qty}"><br>
+						<a href="javascript:modify_cart_qty(${item.goods_id },${item.goods_sales_price },${cnt.count-1 });" >
+							<img width=25 alt=""  src="${contextPath}/resources/image/btn_modify_qty.jpg">
+						</a>
+					</td>
+					<td class="tbl_cnt">
+						<strong>
+						    <fmt:formatNumber  value="${item.goods_sales_price*cart_goods_qty}" type="number" var="total_sales_price" />
+					         $${total_sales_price}
+						</strong> </td>
+					<td class="tbl_cnt">
+						<a href="javascript:fn_order_each_goods('${item.goods_id }','${item.goods_title }','${item.goods_sales_price}','${item.goods_fileName}');">
+					    	<input class="buyButton" type="button" value="order">
+						</a><br>
+					 	
+						<a href="javascript:delete_cart_goods('${cart_id}');""> 
+							<input class="ListButton" type="button" value="delete">
+					   	</a>
+					</td>
+				</tr>
+				<c:set  var="totalGoodsPrice" value="${totalGoodsPrice+item.goods_sales_price*cart_goods_qty }" />  <!-- by me -->
 				<c:set  var="totalGoodsNum" value="${totalGoodsNum+1 }" />
 			   </c:forEach>
 		    
 		</tbody>
-	</table>
+		</table>
      	
-	<div class="clear"></div>
-	 </c:otherwise>
-	</c:choose> 
-	<br>
-	<br>
-	
-	<table  width=80%   class="list_view" style="background:#cacaff">
-	<tbody>
-	     <tr  align=center  class="fixed" >
-	       <td class="fixed">Total Products </td>
-	       <td>Total Product Price</td>
-	       <td>  </td>
-	       <td>Total shipping</td>
-	       <td>  </td>
-	       <td>Total discount</td>
-	       <td>  </td>
-	       <td>Total Payment Price</td>
-	     </tr>
-		<tr cellpadding=40  align=center >
-			<td id="">
-			  <p id="p_totalGoodsNum"> ${totalGoodsNum}ea </p>
-			  <input id="h_totalGoodsNum"type="hidden" value="${totalGoodsNum}"  />
-			</td>
-	       <td>
-	          <p id="p_totalGoodsPrice">
-	          <fmt:formatNumber  value="${totalGoodsPrice}" type="number" var="total_goods_price" />
-				         $ ${total_goods_price}
-	          </p>
-	          <input id="h_totalGoodsPrice"type="hidden" value="${totalGoodsPrice}" />
-	       </td>
-	       <td> 
-	          <img width="25" alt="" src="${contextPath}/resources/image/plus.jpg">  
-	       </td>
-	       <td>
-	         <p id="p_totalDeliveryPrice">$ ${totalDeliveryPrice }  </p>
-	         <input id="h_totalDeliveryPrice"type="hidden" value="${totalDeliveryPrice}" />
-	       </td>
-	       <td> 
-	         <img width="25" alt="" src="${contextPath}/resources/image/minus.jpg"> 
-	       </td>
-	       <td>  
-	         <p id="p_totalSalesPrice"> 
-				         $ ${totalDiscountedPrice}
-	         </p>
-	         <input id="h_totalSalesPrice"type="hidden" value="${totalSalesPrice}" />
-	       </td>
-	       <td>  
-	         <img width="25" alt="" src="${contextPath}/resources/image/equal.jpg">
-	       </td>
-	       <td>
-	          <p id="p_final_totalPrice">
-	          <fmt:formatNumber  value="${totalGoodsPrice+totalDeliveryPrice-totalDiscountedPrice}" type="number" var="total_price" />
-	            $ ${total_price}
-	          </p>
-	          <input id="h_final_totalPrice" type="hidden" value="${totalGoodsPrice+totalDeliveryPrice-totalDiscountedPrice}" />
-	       </td>
-		</tr>
+		<div class="clear"></div>
+		 </c:otherwise>
+		</c:choose> 
+		<br>
+		<br>
+		
+		<table  width=80%   class="list_view" style="background:#ffffff">
+		<tbody>
+			<tr  align=center  class="fixed" >
+		    	<td class="tbl_txt">Total Products </td>
+		       	<td class="tbl_txt">Total Product Price</td>
+		       	<td>  </td>
+		       	<td class="tbl_txt">Total shipping</td>
+		       	<td>  </td>
+		       	<td class="tbl_txt">Total discount</td>
+		       	<td>  </td>
+		       	<td class="tbl_txt">Total Payment Price</td>
+		    </tr>
+			<tr cellpadding=40  align=center >
+				<td class="tbl_cnt" id="">
+					<p id="p_totalGoodsNum"> ${totalGoodsNum}ea </p>
+				  	<input id="h_totalGoodsNum"type="hidden" value="${totalGoodsNum}"  />
+				</td>
+		       	<td class="tbl_cnt">
+		        	<p id="p_totalGoodsPrice">
+		          	<fmt:formatNumber  value="${totalGoodsPrice}" type="number" var="total_goods_price" />
+					         $ ${total_goods_price}
+		          	</p>
+		          	<input id="h_totalGoodsPrice"type="hidden" value="${totalGoodsPrice}" />
+		       	</td>
+		       	<td class="tbl_cnt"> 
+		        	<img width="25" alt="" src="${contextPath}/resources/image/plus.jpg">  
+		       	</td>
+		       	<td class="tbl_cnt">
+		        	<p id="p_totalDeliveryPrice">$ ${totalDeliveryPrice }  </p>
+		         	<input id="h_totalDeliveryPrice"type="hidden" value="${totalDeliveryPrice}" />
+		       	</td>
+		       	<td class="tbl_cnt"> 
+		        	<img width="25" alt="" src="${contextPath}/resources/image/minus.jpg"> 
+		       	</td>
+		       	<td class="tbl_cnt">  
+		        	<p id="p_totalSalesPrice"> 
+						$ ${totalDiscountedPrice}
+		         	</p>
+		         	<input id="h_totalSalesPrice"type="hidden" value="${totalGoodsPrice}" /> <!-- totalSalesPrice -->
+		       	</td>
+		       	<td class="tbl_cnt">  
+		        	<img width="25" alt="" src="${contextPath}/resources/image/equal.jpg">
+		       	</td>
+		       	<td class="tbl_cnt">
+		        	<p id="p_final_totalPrice">
+		          	<fmt:formatNumber  value="${totalGoodsPrice+totalDeliveryPrice-totalDiscountedPrice}" type="number" var="total_price" />
+		            	$ ${total_price}
+		          	</p>
+		          	<input id="h_final_totalPrice" type="hidden" value="${totalGoodsPrice+totalDeliveryPrice-totalDiscountedPrice}" />
+		       	</td>
+			</tr>
 		</tbody>
 	</table>
 	<center>
-    <br><br>	
-		 <a href="javascript:fn_order_all_cart_goods()">
-		 	<img width="75" alt="" src="${contextPath}/resources/image/btn_order_final.jpg">
-		 </a>
-		 <a href="#">
-		 	<img width="75" alt="" src="${contextPath}/resources/image/btn_shoping_continue.jpg">
-		 </a>
+	<br><br>	
+	<a href="javascript:fn_order_all_cart_goods()">
+		<input class="buyButton" type="button" value="Buy now with 1-Click" >
+	</a>
+	<a href="${contextPath}/main/main.do">
+		<input class="ListButton" type="button" value="Continue shopping">
+	</a>
 	<center>
-</form>	
+	</form>
+    </section>
+
+    <section id="content2">
+        <p>Comazon web shopping</p>
+    </section>
+
+    <section id="content3">
+        <p>Jonas</p>
+        <p>Jenny</p>
+        <p>Wilhelm</p>
+        <p>Peter</p>
+        <p>Sharon</p>
+    </section>
+
+    <section id="content4">
+        <p>List Help!!</p>
+    </section>
+	

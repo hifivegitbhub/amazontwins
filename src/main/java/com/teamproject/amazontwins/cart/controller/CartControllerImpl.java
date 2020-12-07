@@ -39,7 +39,7 @@ public class CartControllerImpl extends BaseController implements CartController
 		String member_id=memberVO.getMember_id();
 		cartVO.setMember_id(member_id);
 		Map<String ,List> cartMap=cartService.myCartList(cartVO);
-		session.setAttribute("cartMap", cartMap);//Àå¹Ù±¸´Ï ¸ñ·Ï È­¸é¿¡¼­ »óÇ° ÁÖ¹® ½Ã »ç¿ëÇÏ±â À§ÇØ¼­ Àå¹Ù±¸´Ï ¸ñ·ÏÀ» ¼¼¼Ç¿¡ ÀúÀåÇÑ´Ù.
+		session.setAttribute("cartMap", cartMap);//ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È­ï¿½é¿¡ï¿½ï¿½ ï¿½ï¿½Ç° ï¿½Ö¹ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		//mav.addObject("cartMap", cartMap);
 		return mav;
 	}
@@ -51,7 +51,7 @@ public class CartControllerImpl extends BaseController implements CartController
 		String member_id=memberVO.getMember_id();
 		
 		cartVO.setMember_id(member_id);
-		//Ä«Æ® µî·ÏÀü¿¡ ÀÌ¹Ì µî·ÏµÈ Á¦Ç°ÀÎÁö ÆÇº°ÇÑ´Ù.
+		
 		cartVO.setGoods_id(goods_id);
 		cartVO.setMember_id(member_id);
 		boolean isAreadyExisted=cartService.findCartGoods(cartVO);

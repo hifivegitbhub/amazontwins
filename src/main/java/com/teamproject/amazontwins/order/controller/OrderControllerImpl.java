@@ -40,9 +40,7 @@ public class OrderControllerImpl extends BaseController implements OrderControll
 		
 		Boolean isLogOn=(Boolean)session.getAttribute("isLogOn");
 		String action=(String)session.getAttribute("action");
-		//�α��� ���� üũ
-		//������ �α��� ������ ���� �ֹ����� ����
-		//�α׾ƿ� ������ ��� �α��� ȭ������ �̵�
+		
 		if(isLogOn==null || isLogOn==false){
 			session.setAttribute("orderInfo", _orderVO);
 			session.setAttribute("action", "/order/orderEachGoods.do");
@@ -152,11 +150,11 @@ public class OrderControllerImpl extends BaseController implements OrderControll
 			orderVO.setCard_pay_month(receiverMap.get("card_pay_month"));
 			orderVO.setPay_orderer_hp_num(receiverMap.get("pay_orderer_hp_num"));	
 			orderVO.setOrderer_hp(orderer_hp);	
-			myOrderList.set(i, orderVO); //�� orderVO�� �ֹ��� ������ ������ �� �ٽ� myOrderList�� �����Ѵ�.
+			myOrderList.set(i, orderVO); 
 		}//end for
 		
 	    orderService.addNewOrder(myOrderList);
-		mav.addObject("myOrderInfo",receiverMap);//OrderVO�� �ֹ���� ��������  �ֹ��� ������ ǥ���Ѵ�.
+		mav.addObject("myOrderInfo",receiverMap);
 		mav.addObject("myOrderList", myOrderList);
 		return mav;
 	}

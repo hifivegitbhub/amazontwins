@@ -196,17 +196,25 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
     var i_goods_sales_price=document.createElement("input");
     var i_fileName=document.createElement("input");
     var i_order_goods_qty=document.createElement("input");
+    /* by me */
+    /* var i_goods_price=document.createElement("input"); */
     
     i_goods_id.name="goods_id";
     i_goods_title.name="goods_title";
     i_goods_sales_price.name="goods_sales_price";
     i_fileName.name="goods_fileName";
     i_order_goods_qty.name="order_goods_qty";
+    /* by me */
+    /* i_goods_price.name = "goods_price"; */
     
     i_goods_id.value=goods_id;
     i_order_goods_qty.value=order_goods_qty.value;
     i_goods_title.value=goods_title;
     i_goods_sales_price.value=goods_sales_price;
+    /* by me */
+    /* i_goods_price.value=goods_price; */
+
+    /* alert("goods_sales_price: "+goods_sales_price); */
     i_fileName.value=fileName;
     
     formObj.appendChild(i_goods_id);
@@ -214,6 +222,8 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
     formObj.appendChild(i_goods_sales_price);
     formObj.appendChild(i_fileName);
     formObj.appendChild(i_order_goods_qty);
+    /* by me */
+    /* formObj.appendChild(i_goods_price); */
 
     document.body.appendChild(formObj); 
     formObj.method="post";
@@ -251,7 +261,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 			</a>
 		</div>
 		<h2 id="category_book"><a href="">Comazon Store </a> <span class="spr1">></span> <a href="">Comazon eBooks </a> <span class="spr2">></span> <a href="">Literature & Fiction</a></h2>
-		<br> <!-- 너무 메인 그림이 붙어 있어요. 그래서 라인 하나 넣었어요.-->
+		<br> 
 	</hgroup>
 	<div id="goods_image">
 		<figure>
@@ -276,7 +286,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 				<td class="product_price">Print List Price: </td>
 				<td id="pptext" class="product_price">
 					<span>
-						<fmt:formatNumber value="${goods.goods_price}" type="number" var="goods_price" />
+						<fmt:formatNumber value="${goods.goods_sales_price}" type="number" var="goods_price" />
 				        $${goods_price}
 					</span>
 				</td>
@@ -285,7 +295,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 				<td class="product_price2">Comazon Price: </td>
 				<td id="cptext" class="product_price2">
 					<span>
-					   <fmt:formatNumber  value="${goods.goods_price*0.9}" type="number" var="discounted_price" />
+					   <fmt:formatNumber  value="${goods.goods_sales_price}" type="number" var="discounted_price" />
 				        $${discounted_price}
 				    </span>
 				</td>
@@ -294,7 +304,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 				<td colspan="1" class="product_price2"></td>
 				<td id="dptext" class="product_price2">
 				    <p>
-				    	<fmt:formatNumber  value="${goods.goods_price - goods.goods_price*0.9}" type="number" var="saved_price" />
+				    	<fmt:formatNumber  value="${goods.goods_sales_price - goods.goods_sales_price}" type="number" var="saved_price" />
 				        Save $${saved_price} (10%)
 				    
 				    </p>

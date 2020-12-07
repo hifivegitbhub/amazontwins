@@ -107,6 +107,7 @@ public class GoodsVO {
 	}
 
 	public void setGoods_sales_price(int goods_sales_price) {
+		System.out.println("goods_sales_price: "+goods_sales_price);
 		this.goods_sales_price = goods_sales_price;
 	}
 
