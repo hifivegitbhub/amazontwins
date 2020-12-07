@@ -43,7 +43,7 @@
 			complete : function(data, textStatus) {
 				//alert("completed");
 			}
-		}); //end ajax	
+		});	
 	}
 
 	function displayResult(jsonInfo) {
@@ -56,7 +56,7 @@
 		    $("#tags").autocomplete({ // https://jqueryui.com/autocomplete/
 		        source: jsonInfo.keyword
 			});
-		} 
+		}
 	}
 	
 	function select(selectedKeyword) {
@@ -102,7 +102,6 @@
 		<div id="search" >
 			<form name="frmSearch" action="${contextPath}/goods/searchGoods.do" >
 				<input name="searchWord" id="tags" type="text"  onKeyUp="keywordSearch()">
-				<!-- <input type="submit" name="search" class="btn1"  value="search" > -->
 				<button type="submit" name="search" class="btn1"><i class="fa fa-search"></i></button>
 			</form>
 		</div>
@@ -145,7 +144,7 @@
 				
 				<li><a href="#"><spring:message code="header.cscenter" text="*" /></a></li>
 				
-				<c:if test="${isLogOn==true and memberInfo.member_id =='admin' }">  
+				<c:if test="${isLogOn == true and memberInfo.member_id == 'admin'}">  
 					<li class="no_line"><a href="${contextPath}/admin/goods/adminGoodsMain.do"><spring:message code="header.manager" text="*" /></a></li>
 				</c:if>
 			</ul>
